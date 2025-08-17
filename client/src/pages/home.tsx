@@ -11,9 +11,9 @@ import WelcomePopup from "@/components/WelcomePopup";
 
 export default function Home() {
   return (
-    <div className="min-h-screen text-white overflow-x-hidden relative">
+    <div className="min-h-screen text-white relative w-full">
       {/* Metaverse background layers */}
-      <div className="fixed inset-0 -z-20">
+      <div className="fixed inset-0 w-full h-full -z-20 overflow-hidden">
         {/* Base gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-black via-zinc-900 to-black"></div>
         
@@ -35,16 +35,19 @@ export default function Home() {
         }}></div>
       </div>
       
-      <WelcomePopup />
-      <Navigation />
-      <HeroSection />
-      <AboutSection />
-      <WhySection />
-      <MascotSection />
-      <TokenomicsSection />
-      <RoadmapSection />
-      <CollaborationsSection />
-      <Footer />
+      {/* Content wrapper */}
+      <div className="relative z-10 w-full">
+        <WelcomePopup />
+        <Navigation />
+        <HeroSection />
+        <AboutSection />
+        <WhySection />
+        <MascotSection />
+        <TokenomicsSection />
+        <RoadmapSection />
+        <CollaborationsSection />
+        <Footer />
+      </div>
     </div>
   );
 }

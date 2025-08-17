@@ -26,8 +26,8 @@ export default function WelcomePopup() {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm animate-in fade-in duration-500">
-      <div className="relative bg-gradient-to-br from-zinc-900 via-violet-900/30 to-black border-2 border-violet-500/50 rounded-3xl p-8 max-w-md mx-4 animate-in zoom-in-95 duration-700 shadow-2xl shadow-violet-500/25">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm animate-in fade-in duration-500" style={{width: '100vw', height: '100vh'}}>
+      <div className="relative bg-gradient-to-br from-zinc-900 via-violet-900/30 to-black border-2 border-violet-500/50 rounded-3xl p-8 max-w-md mx-4 animate-in zoom-in-95 duration-700 shadow-2xl shadow-violet-500/25 max-h-[90vh] overflow-y-auto">
         {/* Close button */}
         <button
           onClick={handleClose}
