@@ -3,6 +3,9 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import WhySection from "@/components/WhySection";
 import MascotSection from "@/components/MascotSection";
+import Web3Section from "@/components/Web3Section";
+import DeFiSection from "@/components/DeFiSection";
+import NFTSection from "@/components/NFTSection";
 import TokenomicsSection from "@/components/TokenomicsSection";
 import RoadmapSection from "@/components/RoadmapSection";
 import CollaborationsSection from "@/components/CollaborationsSection";
@@ -43,6 +46,9 @@ export default function Home() {
         <AboutSection />
         <WhySection />
         <MascotSection />
+        <Web3Section />
+        <DeFiSection />
+        <NFTSection />
         <TokenomicsSection />
         <RoadmapSection />
         <CollaborationsSection />

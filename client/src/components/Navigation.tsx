@@ -22,15 +22,21 @@ export default function Navigation() {
           </div>
           
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-12">
+          <div className="hidden md:flex space-x-8">
             <button onClick={() => handleNavClick('#home')} className="text-zinc-300 hover:text-white transition-colors duration-300 font-medium tracking-wide">
               Home
             </button>
             <button onClick={() => handleNavClick('#about')} className="text-zinc-300 hover:text-white transition-colors duration-300 font-medium tracking-wide">
               About
             </button>
-            <button onClick={() => handleNavClick('#ecosystem')} className="text-zinc-300 hover:text-white transition-colors duration-300 font-medium tracking-wide">
-              Ecosystem
+            <button onClick={() => handleNavClick('#web3')} className="text-zinc-300 hover:text-white transition-colors duration-300 font-medium tracking-wide">
+              Web3
+            </button>
+            <button onClick={() => handleNavClick('#defi')} className="text-zinc-300 hover:text-white transition-colors duration-300 font-medium tracking-wide">
+              DeFi
+            </button>
+            <button onClick={() => handleNavClick('#nft')} className="text-zinc-300 hover:text-white transition-colors duration-300 font-medium tracking-wide">
+              NFTs
             </button>
             <button onClick={() => handleNavClick('#tokenomics')} className="text-zinc-300 hover:text-white transition-colors duration-300 font-medium tracking-wide">
               Tokenomics
@@ -64,10 +70,22 @@ export default function Navigation() {
               About
             </button>
             <button 
-              onClick={() => handleNavClick('#ecosystem')} 
+              onClick={() => handleNavClick('#web3')} 
               className="block text-zinc-300 hover:text-white transition-colors font-medium tracking-wide"
             >
-              Ecosystem
+              Web3
+            </button>
+            <button 
+              onClick={() => handleNavClick('#defi')} 
+              className="block text-zinc-300 hover:text-white transition-colors font-medium tracking-wide"
+            >
+              DeFi
+            </button>
+            <button 
+              onClick={() => handleNavClick('#nft')} 
+              className="block text-zinc-300 hover:text-white transition-colors font-medium tracking-wide"
+            >
+              NFTs
             </button>
             <button 
               onClick={() => handleNavClick('#tokenomics')} 
