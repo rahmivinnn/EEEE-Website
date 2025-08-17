@@ -1,0 +1,143 @@
+You are building a full production-ready official website for $EEEEE (the loudest meme on Cardano).
+Follow all details below carefully and generate React + TailwindCSS code that is responsive, fast, and mobile-first.
+
+🎨 General Design Rules
+
+Theme: Meme + Loud Energy + Neon Purple Accent (#8B5CF6)
+
+Background: gradient (black → deep purple) with subtle animated noise texture.
+
+Typography:
+
+Headline font: Anton (Google Fonts, bold + uppercase).
+
+Body font: Inter or Poppins (clean, easy to read).
+
+Style: Modern, memecoin vibes, slightly chaotic but clean enough for Web3.
+
+Buttons: Rounded-xl, neon glow hover effects, gradient purple → pink.
+
+Layout: One-page scrollable landing site. Each section full width, stacked vertically.
+
+Must be responsive for mobile, tablet, desktop.
+
+📄 Sections to Build
+1. Hero Section
+
+Full screen height.
+
+Centered bold headline:
+
+Welcome to $EEEEE
+
+
+Subheadline below:
+
+The Loudest Meme on Cardano. Period.
+
+
+Description paragraph under it:
+
+$EEEEE is more than just a coin — it's a meme-powered movement shaking up the Cardano ecosystem with vibes, volume, and virality. Fueled by community, culture, and chaos (in the best way), we’re here to make noise that can’t be ignored.
+
+
+CTA Buttons (side by side, centered):
+
+Buy $EEEEE → link to Dexhunter
+https://app.dexhunter.io/swap?tokenIdSell=&tokenIdBuy=3d7fcadb114dacbdffa1aeb2f3dc2fecec610a3b572d60f96f1341494545454545436f696e414441
+
+Join Discord → link to Discord
+https://discord.gg/mMfa5nkAaT
+
+2. About Section
+
+Title: 🚀 About $EEEEE
+Content:
+
+Born from the chaos of crypto and powered by an army of degens, $EEEEE is a meme token that doesn't just ride waves — we create them. Whether it’s insane volume, bullish news, or collabs that shake timelines, $EEEEE stays loud.
+
+3. Why $EEEEE Section
+
+Title: 🔥 Why $EEEEE?
+
+Three feature cards with icons + title + description:
+
+Hype-Backed → “From major meme contests to viral raids, the energy around $EEEEE is unmatched.”
+
+Community-Led → “Everything we do is built by the people. We’re fueled by fun, strategy, and solid vibes.”
+
+Web3 Native → “Listed on TapTools, with multiple major collabs brewing. We’re building something loud — and lasting.”
+
+4. Mascot Section
+
+Title: 🎭 Mascot Design
+
+Description:
+
+Our coin mascot is the loudest in the room, literally. Always yelling, always moving, always memeing — it represents the wild, unstoppable spirit of $EEEEE.
+
+
+Placeholder image / animated gif spot for mascot (to be added later).
+
+5. Tokenomics
+
+Title: 📊 Tokenomics
+
+Display in card-style boxes:
+
+Total Supply: 1,000,000,000
+
+Dev Allocation: 78.95M (Fully vested. Transparent vesting schedule available.)
+
+LP Burned & Renounced: True to meme culture.
+
+6. Roadmap
+
+Title: 🌐 Roadmap
+
+Description: “Announced on Discord”
+
+Button → “View Roadmap on Discord” → link to Discord
+
+7. Upcoming Collaborations
+
+Title: 🤝 Upcoming Collaborations
+
+Text:
+
+A major collab is around the corner — potentially involving meme heavyweights. Let’s just say if $SNEK’s looking for energy, $EEEEE brings the whole damn jungle.
+
+8. Footer (Official Links)
+
+Dark background, sticky at bottom.
+
+Links in clean icon style (X, Discord, TapTools, Dexhunter, Snekfun):
+
+Official Links:
+
+X (Twitter): https://x.com/eeeeecoin_ada
+
+Discord: https://discord.gg/mMfa5nkAaT
+
+Dexhunter: https://app.dexhunter.io/swap?tokenIdSell=&tokenIdBuy=3d7fcadb114dacbdffa1aeb2f3dc2fecec610a3b572d60f96f1341494545454545436f696e414441
+
+TapTools: https://www.taptools.io/charts/token/63f947b8d9535bc4e4ce6919e3dc056547e8d30ada12f29aa5f826b8.8d3429b1cd8f035141c7c020be711747c6b4623b5ca5d5a87c97d78b84a1a94a?charts=
+
+Snekfun: https://www.snek.fun/token/3d7fcadb114dacbdffa1aeb2f3dc2fecec610a3b572d60f96f1341494545454545436f696e414441?1752081989900
+
+Policy ID (display in footer):
+3d7fcadb114dacbdffa1aeb2f3dc2fecec610a3b572d60f96f134149
+
+Add Buy $EEEEE Button in footer (glowing, always visible).
+
+⚡️ Extra Notes
+
+Smooth scroll between sections.
+
+Animate on scroll (fade in, slide up).
+
+Hover animations on buttons (glow + bounce).
+
+Mobile: Nav menu → collapsible hamburger style.
+
+👉 Generate complete codebase (React + TailwindCSS) in Replit following all details above.
