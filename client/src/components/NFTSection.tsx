@@ -1,38 +1,34 @@
 import { useState } from "react";
 import { Image, Crown, Star, Zap, Shield, Sparkles } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useQuery } from "@tanstack/react-query";
 
 export default function NFTSection() {
   const { ref, isInView } = useScrollAnimation();
   const [selectedNFT, setSelectedNFT] = useState(0);
 
-  const nftCollections = [
+  // Fetch real NFT collections from database
+  const { data: nftCollectionsData } = useQuery({
+    queryKey: ['/api/nft-collections'],
+  });
+
+  const nftCollections = nftCollectionsData && Array.isArray(nftCollectionsData) ? nftCollectionsData.map((collection: any) => ({
+    name: collection.name,
+    price: collection.price,
+    rarity: collection.rarity,
+    supply: collection.supply,
+    description: collection.description,
+    image: collection.imageUrl || "🔥",
+    gradient: collection.gradient || "from-violet-500 to-purple-500"
+  })) : [
     {
-      name: "EEEEE Genesis",
-      price: "150 ADA",
-      rarity: "Legendary",
-      supply: "1,000",
-      description: "The first and most exclusive EEEEE NFT collection with utility access to premium features",
-      image: "🔥",
-      gradient: "from-violet-500 to-purple-500"
-    },
-    {
-      name: "EEEEE Warriors",
-      price: "75 ADA", 
-      rarity: "Epic",
-      supply: "5,000",
-      description: "Battle-ready EEEEE characters with staking rewards and governance rights",
-      image: "⚔️",
-      gradient: "from-emerald-500 to-cyan-500"
-    },
-    {
-      name: "EEEEE Kingdom",
-      price: "50 ADA",
-      rarity: "Rare", 
-      supply: "10,000",
-      description: "Collectible land plots in the EEEEE metaverse with passive income generation",
-      image: "🏰",
-      gradient: "from-blue-500 to-indigo-500"
+      name: "Loading...",
+      price: "0 ADA",
+      rarity: "Common",
+      supply: "0",
+      description: "Loading collection data...",
+      image: "⏳",
+      gradient: "from-zinc-500 to-gray-500"
     }
   ];
 

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Coins, TrendingUp, Lock, Zap, ArrowUpRight, ArrowDownLeft, DollarSign } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useQuery } from "@tanstack/react-query";
 
 export default function DeFiSection() {
   const { ref, isInView } = useScrollAnimation();
@@ -9,30 +10,28 @@ export default function DeFiSection() {
   const [fromToken, setFromToken] = useState("ADA");
   const [toToken, setToToken] = useState("EEEEE");
 
-  const liquidityPools = [
+  // Fetch real liquidity pools from database
+  const { data: liquidityPoolsData } = useQuery({
+    queryKey: ['/api/liquidity-pools'],
+  });
+
+  const liquidityPools = liquidityPoolsData && Array.isArray(liquidityPoolsData) ? liquidityPoolsData.map((pool: any) => ({
+    pair: `${pool.tokenA}/${pool.tokenB}`,
+    tvl: pool.tvl,
+    apr: pool.apr,
+    volume24h: pool.volume24h,
+    fees24h: pool.fees,
+    gradient: pool.tokenA === 'EEEEE' && pool.tokenB === 'ADA' ? "from-violet-500 to-purple-500" :
+              pool.tokenA === 'EEEEE' && pool.tokenB === 'USDC' ? "from-emerald-500 to-cyan-500" :
+              "from-blue-500 to-indigo-500"
+  })) : [
     {
-      pair: "EEEEE/ADA",
-      tvl: "$12.4M",
-      apr: "127.3%",
-      volume24h: "$3.2M",
-      fees24h: "$9,600",
+      pair: "Loading...",
+      tvl: "$0",
+      apr: "0%",
+      volume24h: "$0",
+      fees24h: "$0",
       gradient: "from-violet-500 to-purple-500"
-    },
-    {
-      pair: "EEEEE/USDC",
-      tvl: "$8.9M", 
-      apr: "94.7%",
-      volume24h: "$2.1M",
-      fees24h: "$6,300",
-      gradient: "from-emerald-500 to-cyan-500"
-    },
-    {
-      pair: "EEEEE/DJED",
-      tvl: "$5.6M",
-      apr: "156.2%", 
-      volume24h: "$1.4M",
-      fees24h: "$4,200",
-      gradient: "from-blue-500 to-indigo-500"
     }
   ];
 

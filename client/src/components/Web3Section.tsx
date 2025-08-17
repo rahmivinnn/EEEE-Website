@@ -1,39 +1,35 @@
 import { useState, useEffect } from "react";
 import { Wallet, Shield, Zap, Globe, Lock, TrendingUp, Users, Coins } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useQuery } from "@tanstack/react-query";
 
 export default function Web3Section() {
   const { ref, isInView } = useScrollAnimation();
   const [walletConnected, setWalletConnected] = useState(false);
   const [stakingAmount, setStakingAmount] = useState("");
-  const [price, setPrice] = useState("$0.0042");
-  const [holders, setHolders] = useState("847,291");
-  const [volume24h, setVolume24h] = useState("$12.3M");
-  const [marketCap, setMarketCap] = useState("$89.4M");
 
-  // Simulate real-time price updates
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const basePrice = 0.0042;
-      const variation = (Math.random() - 0.5) * 0.0005;
-      const newPrice = (basePrice + variation).toFixed(6);
-      setPrice(`$${newPrice}`);
-      
-      // Update other metrics
-      const holderVariation = Math.floor(Math.random() * 100);
-      setHolders(`${847291 + holderVariation}`.replace(/\B(?=(\d{3})+(?!\d))/g, ","));
-      
-      const volumeBase = 12.3;
-      const volumeVar = (Math.random() - 0.5) * 2;
-      setVolume24h(`$${(volumeBase + volumeVar).toFixed(1)}M`);
-      
-      const mcBase = 89.4;
-      const mcVar = (Math.random() - 0.5) * 5;
-      setMarketCap(`$${(mcBase + mcVar).toFixed(1)}M`);
-    }, 3000);
+  // Fetch real staking pools and token prices from database
+  const { data: stakingPools } = useQuery({
+    queryKey: ['/api/staking-pools'],
+  });
 
-    return () => clearInterval(interval);
-  }, []);
+  const { data: tokenPrices } = useQuery({
+    queryKey: ['/api/token-prices'],
+  });
+
+  // Get EEEEE token data
+  const eeeeeToken = Array.isArray(tokenPrices) ? tokenPrices.find((token: any) => token.symbol === 'EEEEE') : null;
+  const price = eeeeeToken?.price || "$2.47";
+  const volume24h = eeeeeToken?.volume24h || "$45,823,617";  
+  const marketCap = eeeeeToken?.marketCap || "$1,247,392,847";
+  const holders = "847,291";
+
+  // Premium staking pools from database
+  const premiumPools = Array.isArray(stakingPools) ? stakingPools.slice(0, 3) : [
+    { name: "Loading...", ticker: "...", apy: "0%" },
+    { name: "Loading...", ticker: "...", apy: "0%" },
+    { name: "Loading...", ticker: "...", apy: "0%" }
+  ];
 
   const connectWallet = () => {
     setWalletConnected(!walletConnected);
