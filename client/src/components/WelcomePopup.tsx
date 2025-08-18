@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { X, Volume2, VolumeX } from "lucide-react";
+import { Player } from '@lottiefiles/react-lottie-player';
 import mascotImage from "@assets/WhatsApp_Image_2025-08-17_at_3.41.31_PM-removebg-preview_1755512185519.png";
 
 export default function WelcomePopup() {
@@ -27,7 +28,7 @@ export default function WelcomePopup() {
 
   return (
     <div className="fixed top-0 left-0 w-screen h-screen z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm animate-in fade-in duration-500">
-      <div className="relative bg-gradient-to-br from-zinc-900 via-violet-900/30 to-black border-2 border-violet-500/50 rounded-3xl p-6 w-full max-w-md mx-4 animate-in zoom-in-95 duration-700 shadow-2xl shadow-violet-500/25">
+      <div className="relative bg-gradient-to-br from-zinc-900 via-slate-800/40 to-black border-2 border-amber-500/50 rounded-3xl p-6 w-full max-w-md mx-4 animate-in zoom-in-95 duration-700 shadow-2xl shadow-orange-500/25">
         {/* Close button */}
         <button
           onClick={handleClose}
@@ -36,37 +37,47 @@ export default function WelcomePopup() {
           <X className="w-6 h-6" />
         </button>
 
-        {/* Mascot */}
+        {/* Mascot with Lottie animation background */}
         <div className="text-center mb-6">
           <div className="relative inline-block w-28 h-28 mx-auto">
+            {/* Lottie animation overlay for immersive effect */}
+            <div className="absolute inset-0 w-32 h-32 -top-2 -left-2">
+              <Player
+                autoplay
+                loop
+                src="https://lottie.host/embed/7a5e7a8d-4a2c-4e7f-9c5a-2b3e1f4c8d9a/3fG2h8kL6m.json"
+                style={{ height: '100%', width: '100%' }}
+                className="opacity-30"
+              />
+            </div>
             <img 
               src={mascotImage} 
               alt="$EEEEE Mascot" 
-              className="w-full h-full object-contain animate-bounce-slow drop-shadow-2xl"
+              className="w-full h-full object-contain animate-bounce-slow drop-shadow-2xl relative z-10"
             />
-            <div className="absolute inset-0 bg-gradient-to-br from-violet-500/20 to-purple-500/20 rounded-full blur-xl animate-pulse"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-amber-500/20 rounded-full blur-xl animate-pulse"></div>
           </div>
         </div>
 
         {/* Welcome message */}
         <div className="text-center mb-6">
-          <h2 className="font-anton text-2xl uppercase mb-3 bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent">
+          <h2 className="font-anton text-2xl uppercase mb-3 bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
             Welcome to $EEEEE!
           </h2>
           <p className="text-zinc-300 leading-relaxed text-sm">
-            Ready to experience the most <span className="font-bold text-violet-400">dominant force</span> on Cardano? 
+            Ready to experience the most <span className="font-bold text-orange-400">dominant force</span> on Cardano? 
             Let's make some noise together!
           </p>
         </div>
 
-        {/* Interactive buttons */}
+        {/* Interactive buttons with natural styling */}
         <div className="space-y-3">
           <button
             onClick={handleClose}
-            className="w-full group relative px-6 py-3 bg-gradient-to-r from-violet-600 to-purple-600 rounded-xl font-bold text-base tracking-wide transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-violet-500/25 overflow-hidden"
+            className="w-full group relative px-6 py-3 bg-gradient-to-r from-orange-500 to-amber-500 rounded-xl font-bold text-base tracking-wide transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/30 overflow-hidden border-2 border-orange-400/20"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-violet-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <span className="relative z-10 flex items-center justify-center gap-2">
+            <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-amber-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <span className="relative z-10 flex items-center justify-center gap-2 text-black font-extrabold">
               <span>LET'S GO!</span>
             </span>
           </button>
@@ -77,7 +88,7 @@ export default function WelcomePopup() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleClose}
-              className="flex-1 px-4 py-2.5 bg-gradient-to-r from-emerald-600 to-cyan-600 rounded-lg font-semibold text-center hover:scale-105 transition-transform text-sm"
+              className="flex-1 px-4 py-2.5 bg-gradient-to-r from-teal-600 to-green-600 rounded-lg font-semibold text-center hover:scale-105 transition-transform text-sm border border-teal-500/30"
             >
               Buy Now
             </a>
@@ -86,7 +97,7 @@ export default function WelcomePopup() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleClose}
-              className="flex-1 px-4 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg font-semibold text-center hover:scale-105 transition-transform text-sm"
+              className="flex-1 px-4 py-2.5 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg font-semibold text-center hover:scale-105 transition-transform text-sm border border-blue-500/30"
             >
               Join Discord
             </a>
@@ -95,7 +106,7 @@ export default function WelcomePopup() {
           {/* Sound toggle */}
           <button
             onClick={toggleSound}
-            className="w-full px-4 py-2 bg-zinc-800/50 hover:bg-zinc-700/50 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 text-sm"
+            className="w-full px-4 py-2 bg-zinc-800/50 hover:bg-zinc-700/50 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 text-sm border border-zinc-600/30"
           >
             {soundEnabled ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />}
             <span>{soundEnabled ? "Sound On" : "Sound Off"}</span>
@@ -107,7 +118,7 @@ export default function WelcomePopup() {
           {[...Array(4)].map((_, i) => (
             <div
               key={i}
-              className="absolute w-1.5 h-1.5 bg-violet-400 rounded-full animate-float opacity-60"
+              className="absolute w-1.5 h-1.5 bg-orange-400 rounded-full animate-float opacity-60"
               style={{
                 left: `${20 + i * 20}%`,
                 top: `${25 + i * 15}%`,

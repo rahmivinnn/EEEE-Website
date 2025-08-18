@@ -19,14 +19,14 @@ export default function HeroSection() {
             <span className="block bg-gradient-to-r from-white via-violet-200 to-purple-300 bg-clip-text text-transparent">
               Welcome to
             </span>
-            <span className="block bg-gradient-to-r from-violet-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent text-7xl md:text-9xl lg:text-[12rem] leading-none">
+            <span className="block bg-gradient-to-r from-orange-400 via-amber-400 to-yellow-400 bg-clip-text text-transparent text-7xl md:text-9xl lg:text-[12rem] leading-none">
               $EEEEE
             </span>
           </h1>
         </div>
         
         <h2 className="text-2xl md:text-4xl lg:text-5xl font-light mb-12 text-zinc-200 tracking-wide leading-tight">
-          The Most <span className="font-bold bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent">Dominant Force</span> on Cardano
+          The Most <span className="font-bold bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">Dominant Force</span> on Cardano
         </h2>
         
         <p className="text-lg md:text-xl lg:text-2xl text-zinc-400 mb-16 max-w-4xl mx-auto leading-relaxed font-light">
@@ -37,9 +37,9 @@ export default function HeroSection() {
         
         <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
           <EEEEEPopup>
-            <button className="group relative px-12 py-5 bg-gradient-to-r from-violet-600 to-purple-600 rounded-xl font-semibold text-lg tracking-wide transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-violet-500/25 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-violet-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <span className="relative z-10 flex items-center gap-3">
+            <button className="group relative px-12 py-5 bg-gradient-to-r from-orange-600 to-amber-600 rounded-xl font-semibold text-lg tracking-wide transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/25 overflow-hidden border-2 border-orange-400/20">
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-amber-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <span className="relative z-10 flex items-center gap-3 text-black font-bold">
                 <span>Buy $EEEEE</span>
                 <span className="text-xl">→</span>
               </span>
@@ -50,7 +50,7 @@ export default function HeroSection() {
             href="https://discord.gg/mMfa5nkAaT" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="group px-12 py-5 bg-transparent border-2 border-zinc-700 hover:border-violet-500 rounded-xl font-semibold text-lg tracking-wide transition-all duration-500 hover:scale-105 hover:bg-violet-500/10"
+            className="group px-12 py-5 bg-transparent border-2 border-zinc-700 hover:border-teal-500 rounded-xl font-semibold text-lg tracking-wide transition-all duration-500 hover:scale-105 hover:bg-teal-500/10"
           >
             <span className="flex items-center gap-3">
               <span>Join Community</span>

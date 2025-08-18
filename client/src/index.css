@@ -26,11 +26,12 @@
   --ring: hsl(262, 83%, 58%);
   --radius: 0.75rem;
   
-  /* Custom EEEEE colors */
-  --neon-purple: hsl(262, 83%, 58%);
-  --hot-pink: hsl(328, 86%, 58%);
-  --electric-blue: hsl(217, 91%, 60%);
-  --deep-purple: hsl(262, 100%, 25%);
+  /* Custom EEEEE colors - Natural Organic Palette */
+  --warm-gold: hsl(45, 100%, 60%);
+  --deep-orange: hsl(15, 100%, 55%);
+  --earth-brown: hsl(30, 80%, 40%);
+  --forest-green: hsl(120, 60%, 30%);
+  --ocean-teal: hsl(180, 70%, 35%);
   
   /* Font families */
   --font-anton: 'Anton', sans-serif;

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { X, ExternalLink, Copy, Star } from "lucide-react";
+import { Player } from '@lottiefiles/react-lottie-player';
 import eeeeeMainImage from "@assets/WhatsApp_Image_2025-08-17_at_3.41.31_PM-removebg-preview_1755512185519.png";
 import eeeeeSmallImage from "@assets/image_1755511815277.png";
 
@@ -45,7 +46,7 @@ export default function EEEEEPopup({ children }: EEEEEPopupProps) {
       </DialogTrigger>
       <DialogContent className="max-w-md bg-gradient-to-br from-zinc-900 to-black border-violet-500/30 p-0 overflow-hidden">
         {/* Header with EEEEE mascot */}
-        <div className="relative bg-gradient-to-br from-violet-600/20 to-purple-600/20 p-6 text-center">
+        <div className="relative bg-gradient-to-br from-orange-600/20 to-amber-600/20 p-6 text-center">
           <button
             onClick={() => setOpen(false)}
             className="absolute top-4 right-4 p-2 rounded-full bg-black/30 hover:bg-black/50 transition-colors"
@@ -57,24 +58,24 @@ export default function EEEEEPopup({ children }: EEEEEPopupProps) {
             <img 
               src={eeeeeSmallImage} 
               alt="EEEEE" 
-              className="w-16 h-16 rounded-full border-2 border-violet-400 shadow-lg"
+              className="w-16 h-16 rounded-full border-2 border-orange-400 shadow-lg"
             />
             <img 
               src={eeeeeMainImage} 
               alt="EEEEE Main" 
-              className="w-20 h-20 rounded-full border-2 border-purple-400 shadow-xl"
+              className="w-20 h-20 rounded-full border-2 border-amber-400 shadow-xl"
             />
           </div>
           
           <h2 className="font-anton text-3xl text-white mb-2 tracking-wider">$EEEEE</h2>
-          <p className="text-violet-300 text-sm">The Loudest Meme on Cardano</p>
+          <p className="text-orange-300 text-sm">The Loudest Meme on Cardano</p>
           
           <div className="mt-4 flex justify-center gap-4 text-sm">
             <div className="bg-emerald-500/20 px-3 py-1 rounded-full border border-emerald-500/30">
               <span className="text-emerald-400 font-bold">$2.47</span>
             </div>
             <div className="bg-purple-500/20 px-3 py-1 rounded-full border border-purple-500/30">
-              <span className="text-purple-400 font-bold">+24.7%</span>
+              <span className="text-amber-400 font-bold">+24.7%</span>
             </div>
           </div>
         </div>
@@ -86,7 +87,7 @@ export default function EEEEEPopup({ children }: EEEEEPopupProps) {
               <span className="text-zinc-400 text-sm">Contract Address</span>
               <button
                 onClick={copyToClipboard}
-                className="flex items-center gap-2 px-3 py-1 bg-violet-600/20 hover:bg-violet-600/30 rounded-lg transition-colors text-xs"
+                className="flex items-center gap-2 px-3 py-1 bg-orange-600/20 hover:bg-orange-600/30 rounded-lg transition-colors text-xs"
               >
                 <Copy className="w-3 h-3" />
                 {copied ? "Copied!" : "Copy"}
