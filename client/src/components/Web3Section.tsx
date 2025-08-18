@@ -66,7 +66,7 @@ export default function Web3Section() {
         {/* Real-time Stats Dashboard */}
         <div className={`mb-16 section-fade ${isInView ? 'in-view' : ''}`} style={{animationDelay: '0.2s'}}>
           <div className="bg-gradient-to-br from-zinc-900/90 to-black/90 backdrop-blur-xl border border-zinc-800 rounded-3xl p-8">
-            <h3 className="text-2xl font-bold text-white mb-4 text-center tracking-wide">
+            <h3 className="text-2xl font-bold text-white mb-4 text-center tracking-wide text-glow">
               LIVE MARKET DATA
               <span className="inline-block w-3 h-3 bg-green-500 rounded-full ml-3 animate-pulse"></span>
             </h3>

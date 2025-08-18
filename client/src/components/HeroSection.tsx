@@ -19,17 +19,17 @@ export default function HeroSection() {
             <span className="block bg-gradient-to-r from-white via-violet-200 to-purple-300 bg-clip-text text-transparent">
               Welcome to
             </span>
-            <span className="block bg-gradient-to-r from-purple-400 via-violet-400 to-yellow-400 bg-clip-text text-transparent text-7xl md:text-9xl lg:text-[12rem] leading-none">
+            <span className="block bg-gradient-to-r from-purple-400 via-violet-400 to-yellow-400 bg-clip-text text-transparent text-7xl md:text-9xl lg:text-[12rem] leading-none text-glow">
               $EEEEE
             </span>
           </h1>
         </div>
         
-        <h2 className="text-2xl md:text-4xl lg:text-5xl font-light mb-12 text-zinc-200 tracking-wide leading-tight">
-          The Most <span className="font-bold bg-gradient-to-r from-purple-400 to-yellow-400 bg-clip-text text-transparent">Dominant Force</span> on Cardano
+        <h2 className="text-2xl md:text-4xl lg:text-5xl font-light mb-12 text-zinc-200 tracking-wide leading-tight fade-in-up animated-delay-1">
+          The Most <span className="font-bold bg-gradient-to-r from-purple-400 to-yellow-400 bg-clip-text text-transparent slide-in-left animated-delay-2">Dominant Force</span> on Cardano
         </h2>
         
-        <p className="text-lg md:text-xl lg:text-2xl text-zinc-400 mb-16 max-w-4xl mx-auto leading-relaxed font-light">
+        <p className="text-lg md:text-xl lg:text-2xl text-zinc-400 mb-16 max-w-4xl mx-auto leading-relaxed font-light text-reveal animated-delay-3">
           Built on institutional-grade infrastructure with enterprise-level partnerships. 
           $EEEEE represents the evolution of decentralized finance on Cardano, backed by 
           sophisticated algorithmic trading systems and unprecedented market liquidity.
