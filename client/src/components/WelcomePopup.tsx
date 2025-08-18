@@ -27,7 +27,7 @@ export default function WelcomePopup() {
 
   return (
     <div className="fixed top-0 left-0 w-screen h-screen z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm animate-in fade-in duration-500">
-      <div className="relative bg-gradient-to-br from-zinc-900 via-slate-800/40 to-black border-2 border-amber-500/50 rounded-3xl p-6 w-full max-w-md mx-4 animate-in zoom-in-95 duration-700 shadow-2xl shadow-orange-500/25">
+      <div className="relative bg-gradient-to-br from-zinc-900 via-purple-900/40 to-black border-2 border-yellow-500/50 rounded-3xl p-6 w-full max-w-md mx-4 animate-in zoom-in-95 duration-700 shadow-2xl shadow-purple-500/25">
         {/* Close button */}
         <button
           onClick={handleClose}
@@ -41,24 +41,24 @@ export default function WelcomePopup() {
           <div className="relative inline-block w-28 h-28 mx-auto">
             {/* Animated background glow effect */}
             <div className="absolute inset-0 w-32 h-32 -top-2 -left-2">
-              <div className="w-full h-full bg-gradient-to-br from-orange-500/20 to-amber-500/20 rounded-full blur-xl animate-pulse"></div>
+              <div className="w-full h-full bg-gradient-to-br from-purple-500/20 to-yellow-500/20 rounded-full blur-xl animate-pulse"></div>
             </div>
             <img 
               src={mascotImage} 
               alt="$EEEEE Mascot" 
               className="w-full h-full object-contain animate-bounce-slow drop-shadow-2xl relative z-10"
             />
-            <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-amber-500/20 rounded-full blur-xl animate-pulse"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-yellow-500/20 rounded-full blur-xl animate-pulse"></div>
           </div>
         </div>
 
         {/* Welcome message */}
         <div className="text-center mb-6">
-          <h2 className="font-anton text-2xl uppercase mb-3 bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
+          <h2 className="font-anton text-2xl uppercase mb-3 bg-gradient-to-r from-purple-400 to-yellow-400 bg-clip-text text-transparent">
             Welcome to $EEEEE!
           </h2>
           <p className="text-zinc-300 leading-relaxed text-sm">
-            Ready to experience the most <span className="font-bold text-orange-400">dominant force</span> on Cardano? 
+            Ready to experience the most <span className="font-bold text-yellow-400">dominant force</span> on Cardano? 
             Let's make some noise together!
           </p>
         </div>
@@ -67,9 +67,9 @@ export default function WelcomePopup() {
         <div className="space-y-3">
           <button
             onClick={handleClose}
-            className="w-full group relative px-6 py-3 bg-gradient-to-r from-orange-500 to-amber-500 rounded-xl font-bold text-base tracking-wide transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/30 overflow-hidden border-2 border-orange-400/20"
+            className="w-full group relative px-6 py-3 bg-gradient-to-r from-purple-500 to-yellow-500 rounded-xl font-bold text-base tracking-wide transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30 overflow-hidden border-2 border-purple-400/20"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-amber-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <span className="relative z-10 flex items-center justify-center gap-2 text-black font-extrabold">
               <span>LET'S GO!</span>
             </span>
@@ -81,7 +81,7 @@ export default function WelcomePopup() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleClose}
-              className="flex-1 px-4 py-2.5 bg-gradient-to-r from-teal-600 to-green-600 rounded-lg font-semibold text-center hover:scale-105 transition-transform text-sm border border-teal-500/30"
+              className="flex-1 px-4 py-2.5 bg-gradient-to-r from-purple-600 to-violet-600 rounded-lg font-semibold text-center hover:scale-105 transition-transform text-sm border border-purple-500/30"
             >
               Buy Now
             </a>
@@ -90,7 +90,7 @@ export default function WelcomePopup() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleClose}
-              className="flex-1 px-4 py-2.5 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg font-semibold text-center hover:scale-105 transition-transform text-sm border border-blue-500/30"
+              className="flex-1 px-4 py-2.5 bg-gradient-to-r from-yellow-600 to-amber-600 rounded-lg font-semibold text-center hover:scale-105 transition-transform text-sm border border-yellow-500/30"
             >
               Join Discord
             </a>
@@ -111,7 +111,7 @@ export default function WelcomePopup() {
           {[...Array(4)].map((_, i) => (
             <div
               key={i}
-              className="absolute w-1.5 h-1.5 bg-orange-400 rounded-full animate-float opacity-60"
+              className="absolute w-1.5 h-1.5 bg-yellow-400 rounded-full animate-float opacity-60"
               style={{
                 left: `${20 + i * 20}%`,
                 top: `${25 + i * 15}%`,

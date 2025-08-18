@@ -24,16 +24,16 @@ export default function Home() {
         {/* Metaverse overlays */}
         <div className="absolute inset-0 metaverse-bg"></div>
         
-        {/* Floating orbs - Natural colors */}
-        <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-orange-600/20 to-amber-600/20 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-40 right-20 w-80 h-80 bg-gradient-to-br from-teal-600/15 to-green-600/15 rounded-full blur-3xl animate-float" style={{animationDelay: '5s'}}></div>
-        <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-gradient-to-br from-amber-600/10 to-yellow-600/10 rounded-full blur-3xl animate-float" style={{animationDelay: '10s'}}></div>
+        {/* Floating orbs - Purple & Yellow theme */}
+        <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-purple-600/20 to-violet-600/20 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-40 right-20 w-80 h-80 bg-gradient-to-br from-yellow-600/15 to-amber-600/15 rounded-full blur-3xl animate-float" style={{animationDelay: '5s'}}></div>
+        <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-gradient-to-br from-purple-600/10 to-yellow-600/10 rounded-full blur-3xl animate-float" style={{animationDelay: '10s'}}></div>
         
         {/* Grid overlay */}
         <div className="absolute inset-0 opacity-5" style={{
           backgroundImage: `
-            linear-gradient(rgba(251, 146, 60, 0.3) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(251, 146, 60, 0.3) 1px, transparent 1px)
+            linear-gradient(rgba(168, 85, 247, 0.3) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(168, 85, 247, 0.3) 1px, transparent 1px)
           `,
           backgroundSize: '50px 50px'
         }}></div>

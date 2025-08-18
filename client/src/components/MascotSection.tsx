@@ -28,10 +28,10 @@ export default function MascotSection() {
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Mascot 1 - Excited EEEEE */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-3xl p-12 backdrop-blur-xl relative overflow-hidden group hover:border-orange-500/50 transition-all duration-500">
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-amber-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-3xl p-12 backdrop-blur-xl relative overflow-hidden group hover:border-purple-500/50 transition-all duration-500">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-yellow-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               {/* Animated background pattern */}
-              <div className="absolute inset-0 opacity-20 bg-gradient-to-br from-orange-500/10 to-amber-500/10 animate-pulse"></div>
+              <div className="absolute inset-0 opacity-20 bg-gradient-to-br from-purple-500/10 to-yellow-500/10 animate-pulse"></div>
               <div className="relative z-10 text-center">
                 <div className="relative inline-block mb-8">
                   <img 
@@ -51,10 +51,10 @@ export default function MascotSection() {
 
           {/* Mascot 2 - Premium EEEEE */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-3xl p-12 backdrop-blur-xl relative overflow-hidden group hover:border-teal-500/50 transition-all duration-500">
-              <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 to-green-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-3xl p-12 backdrop-blur-xl relative overflow-hidden group hover:border-yellow-500/50 transition-all duration-500">
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               {/* Animated background pattern */}
-              <div className="absolute inset-0 opacity-15 bg-gradient-to-br from-teal-500/10 to-green-500/10 animate-pulse"></div>
+              <div className="absolute inset-0 opacity-15 bg-gradient-to-br from-yellow-500/10 to-purple-500/10 animate-pulse"></div>
               <div className="relative z-10 text-center">
                 <div className="relative inline-block mb-8">
                   <img 

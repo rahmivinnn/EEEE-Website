@@ -43,9 +43,9 @@ export default function EEEEEPopup({ children }: EEEEEPopupProps) {
       <DialogTrigger asChild>
         {children}
       </DialogTrigger>
-      <DialogContent className="max-w-md bg-gradient-to-br from-zinc-900 to-black border-violet-500/30 p-0 overflow-hidden">
+      <DialogContent className="max-w-md bg-gradient-to-br from-zinc-900 to-black border-purple-500/30 p-0 overflow-hidden">
         {/* Header with EEEEE mascot */}
-        <div className="relative bg-gradient-to-br from-orange-600/20 to-amber-600/20 p-6 text-center">
+        <div className="relative bg-gradient-to-br from-purple-600/20 to-yellow-600/20 p-6 text-center">
           <button
             onClick={() => setOpen(false)}
             className="absolute top-4 right-4 p-2 rounded-full bg-black/30 hover:bg-black/50 transition-colors"
@@ -67,14 +67,14 @@ export default function EEEEEPopup({ children }: EEEEEPopupProps) {
           </div>
           
           <h2 className="font-anton text-3xl text-white mb-2 tracking-wider">$EEEEE</h2>
-          <p className="text-orange-300 text-sm">The Loudest Meme on Cardano</p>
+          <p className="text-yellow-300 text-sm">The Loudest Meme on Cardano</p>
           
           <div className="mt-4 flex justify-center gap-4 text-sm">
-            <div className="bg-emerald-500/20 px-3 py-1 rounded-full border border-emerald-500/30">
-              <span className="text-emerald-400 font-bold">$2.47</span>
-            </div>
             <div className="bg-purple-500/20 px-3 py-1 rounded-full border border-purple-500/30">
-              <span className="text-amber-400 font-bold">+24.7%</span>
+              <span className="text-purple-400 font-bold">$2.47</span>
+            </div>
+            <div className="bg-yellow-500/20 px-3 py-1 rounded-full border border-yellow-500/30">
+              <span className="text-yellow-400 font-bold">+24.7%</span>
             </div>
           </div>
         </div>
@@ -86,7 +86,7 @@ export default function EEEEEPopup({ children }: EEEEEPopupProps) {
               <span className="text-zinc-400 text-sm">Contract Address</span>
               <button
                 onClick={copyToClipboard}
-                className="flex items-center gap-2 px-3 py-1 bg-orange-600/20 hover:bg-orange-600/30 rounded-lg transition-colors text-xs"
+                className="flex items-center gap-2 px-3 py-1 bg-purple-600/20 hover:bg-purple-600/30 rounded-lg transition-colors text-xs"
               >
                 <Copy className="w-3 h-3" />
                 {copied ? "Copied!" : "Copy"}
@@ -111,20 +111,20 @@ export default function EEEEEPopup({ children }: EEEEEPopupProps) {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between p-3 bg-gradient-to-r from-violet-600/10 to-purple-600/10 hover:from-violet-600/20 hover:to-purple-600/20 rounded-xl border border-violet-500/20 hover:border-violet-500/40 transition-all duration-300 group"
+                className="flex items-center justify-between p-3 bg-gradient-to-r from-purple-600/10 to-yellow-600/10 hover:from-purple-600/20 hover:to-yellow-600/20 rounded-xl border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 group"
               >
                 <div>
                   <div className="font-bold text-white text-sm">{link.name}</div>
                   <div className="text-zinc-400 text-xs">{link.description}</div>
                 </div>
-                <ExternalLink className="w-4 h-4 text-violet-400 group-hover:text-violet-300 transition-colors" />
+                <ExternalLink className="w-4 h-4 text-yellow-400 group-hover:text-yellow-300 transition-colors" />
               </a>
             ))}
           </div>
         </div>
 
         {/* Footer */}
-        <div className="bg-gradient-to-r from-violet-600/10 to-purple-600/10 px-6 py-4 border-t border-violet-500/20">
+        <div className="bg-gradient-to-r from-purple-600/10 to-yellow-600/10 px-6 py-4 border-t border-purple-500/20">
           <p className="text-center text-zinc-400 text-xs">
             Always DYOR before investing. Crypto investments are high risk.
           </p>

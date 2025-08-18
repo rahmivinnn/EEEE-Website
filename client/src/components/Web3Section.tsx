@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Wallet, Shield, Zap, Globe, Lock, TrendingUp, Users, Coins } from "lucide-react";
+import { Zap, TrendingUp, Users, Coins, Wallet, DollarSign, BarChart3, Layers, Network, Server, Database, Shield } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useQuery } from "@tanstack/react-query";
 import EEEEEPopup from "@/components/EEEEEPopup";
@@ -49,7 +49,7 @@ export default function Web3Section() {
         {/* Header */}
         <div className={`text-center mb-20 section-fade ${isInView ? 'in-view' : ''}`}>
           <h2 className="font-anton text-5xl lg:text-6xl uppercase mb-6 tracking-wider">
-            <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-purple-400 via-violet-400 to-yellow-400 bg-clip-text text-transparent">
               WEB3 ECOSYSTEM
             </span>
           </h2>
@@ -67,20 +67,24 @@ export default function Web3Section() {
               <span className="inline-block w-3 h-3 bg-green-500 rounded-full ml-3 animate-pulse"></span>
             </h3>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="text-center p-4 bg-gradient-to-br from-violet-500/10 to-purple-500/10 rounded-2xl border border-violet-500/20">
-                <div className="text-3xl font-bold text-violet-400 mb-2">{price}</div>
+              <div className="text-center p-4 bg-gradient-to-br from-purple-500/10 to-yellow-500/10 rounded-2xl border border-purple-500/20">
+                <DollarSign className="w-6 h-6 mx-auto mb-2 text-purple-400" />
+                <div className="text-3xl font-bold text-purple-400 mb-2">{price}</div>
                 <div className="text-sm text-zinc-400">PRICE</div>
               </div>
-              <div className="text-center p-4 bg-gradient-to-br from-emerald-500/10 to-cyan-500/10 rounded-2xl border border-emerald-500/20">
-                <div className="text-3xl font-bold text-emerald-400 mb-2">{holders}</div>
+              <div className="text-center p-4 bg-gradient-to-br from-yellow-500/10 to-purple-500/10 rounded-2xl border border-yellow-500/20">
+                <Users className="w-6 h-6 mx-auto mb-2 text-yellow-400" />
+                <div className="text-3xl font-bold text-yellow-400 mb-2">{holders}</div>
                 <div className="text-sm text-zinc-400">HOLDERS</div>
               </div>
-              <div className="text-center p-4 bg-gradient-to-br from-blue-500/10 to-indigo-500/10 rounded-2xl border border-blue-500/20">
-                <div className="text-3xl font-bold text-blue-400 mb-2">{volume24h}</div>
+              <div className="text-center p-4 bg-gradient-to-br from-purple-500/10 to-violet-500/10 rounded-2xl border border-purple-500/20">
+                <BarChart3 className="w-6 h-6 mx-auto mb-2 text-purple-400" />
+                <div className="text-3xl font-bold text-purple-400 mb-2">{volume24h}</div>
                 <div className="text-sm text-zinc-400">24H VOLUME</div>
               </div>
-              <div className="text-center p-4 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-2xl border border-purple-500/20">
-                <div className="text-3xl font-bold text-purple-400 mb-2">{marketCap}</div>
+              <div className="text-center p-4 bg-gradient-to-br from-yellow-500/10 to-amber-500/10 rounded-2xl border border-yellow-500/20">
+                <Coins className="w-6 h-6 mx-auto mb-2 text-yellow-400" />
+                <div className="text-3xl font-bold text-yellow-400 mb-2">{marketCap}</div>
                 <div className="text-sm text-zinc-400">MARKET CAP</div>
               </div>
             </div>
@@ -92,7 +96,7 @@ export default function Web3Section() {
           {/* Wallet Connection */}
           <div className="bg-gradient-to-br from-zinc-900/90 to-black/90 backdrop-blur-xl border border-zinc-800 rounded-3xl p-8">
             <div className="flex items-center gap-4 mb-6">
-              <div className="p-3 bg-gradient-to-br from-violet-500 to-purple-600 rounded-xl">
+              <div className="p-3 bg-gradient-to-br from-purple-500 to-yellow-600 rounded-xl">
                 <Wallet className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-white tracking-wide">CARDANO WALLET</h3>
@@ -105,16 +109,16 @@ export default function Web3Section() {
                 </p>
                 <button
                   onClick={connectWallet}
-                  className="w-full py-4 bg-gradient-to-r from-violet-600 to-purple-600 rounded-xl font-bold text-lg tracking-wide hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-violet-500/25"
+                  className="w-full py-4 bg-gradient-to-r from-purple-600 to-yellow-600 rounded-xl font-bold text-lg tracking-wide hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/25"
                 >
                   CONNECT WALLET
                 </button>
               </div>
             ) : (
               <div className="space-y-4">
-                <div className="flex items-center gap-3 p-4 bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 rounded-xl border border-emerald-500/30">
-                  <div className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
-                  <span className="text-emerald-400 font-bold">WALLET CONNECTED</span>
+                <div className="flex items-center gap-3 p-4 bg-gradient-to-r from-yellow-500/20 to-purple-500/20 rounded-xl border border-yellow-500/30">
+                  <div className="w-3 h-3 bg-yellow-500 rounded-full animate-pulse"></div>
+                  <span className="text-yellow-400 font-bold">WALLET CONNECTED</span>
                 </div>
                 <div className="text-zinc-400">
                   <div className="mb-2"><strong>Address:</strong> addr1qx...7k9m</div>
@@ -134,7 +138,7 @@ export default function Web3Section() {
           {/* Staking Interface */}
           <div className="bg-gradient-to-br from-zinc-900/90 to-black/90 backdrop-blur-xl border border-zinc-800 rounded-3xl p-8">
             <div className="flex items-center gap-4 mb-6">
-              <div className="p-3 bg-gradient-to-br from-emerald-500 to-cyan-600 rounded-xl">
+              <div className="p-3 bg-gradient-to-br from-yellow-500 to-purple-600 rounded-xl">
                 <Shield className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-white tracking-wide">STAKING POOL</h3>
@@ -142,12 +146,12 @@ export default function Web3Section() {
             
             <div className="space-y-6">
               <div className="grid grid-cols-2 gap-4 text-center">
-                <div className="p-3 bg-gradient-to-br from-violet-500/10 to-purple-500/10 rounded-xl">
-                  <div className="text-2xl font-bold text-violet-400">24.7%</div>
+                <div className="p-3 bg-gradient-to-br from-purple-500/10 to-yellow-500/10 rounded-xl">
+                  <div className="text-2xl font-bold text-purple-400">24.7%</div>
                   <div className="text-xs text-zinc-400">APY</div>
                 </div>
-                <div className="p-3 bg-gradient-to-br from-emerald-500/10 to-cyan-500/10 rounded-xl">
-                  <div className="text-2xl font-bold text-emerald-400">847K</div>
+                <div className="p-3 bg-gradient-to-br from-yellow-500/10 to-purple-500/10 rounded-xl">
+                  <div className="text-2xl font-bold text-yellow-400">847K</div>
                   <div className="text-xs text-zinc-400">STAKERS</div>
                 </div>
               </div>
@@ -159,12 +163,12 @@ export default function Web3Section() {
                   value={stakingAmount}
                   onChange={(e) => setStakingAmount(e.target.value)}
                   placeholder="Enter amount..."
-                  className="w-full px-4 py-3 bg-zinc-800 border border-zinc-700 rounded-xl text-white focus:border-violet-500 focus:outline-none transition-colors"
+                  className="w-full px-4 py-3 bg-zinc-800 border border-zinc-700 rounded-xl text-white focus:border-purple-500 focus:outline-none transition-colors"
                 />
                 <button
                   onClick={handleStaking}
                   disabled={!stakingAmount || !walletConnected}
-                  className="w-full py-3 bg-gradient-to-r from-emerald-600 to-cyan-600 rounded-xl font-bold tracking-wide hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  className="w-full py-3 bg-gradient-to-r from-yellow-600 to-purple-600 rounded-xl font-bold tracking-wide hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
                   {walletConnected ? 'STAKE NOW' : 'CONNECT WALLET FIRST'}
                 </button>
@@ -180,25 +184,25 @@ export default function Web3Section() {
               icon: <Zap className="w-6 h-6" />,
               title: "Lightning Fast",
               description: "Sub-second transaction finality on Cardano's advanced blockchain infrastructure",
-              gradient: "from-yellow-500 to-orange-500"
+              gradient: "from-purple-500 to-yellow-500"
             },
             {
               icon: <Shield className="w-6 h-6" />,
               title: "Military Grade Security",
               description: "Multi-signature wallets and smart contract audits by top security firms",
-              gradient: "from-emerald-500 to-cyan-500"
+              gradient: "from-yellow-500 to-purple-500"
             },
             {
-              icon: <Globe className="w-6 h-6" />,
+              icon: <Network className="w-6 h-6" />,
               title: "Cross-Chain Bridge",
               description: "Seamlessly bridge assets across Ethereum, Polygon, and Cardano networks",
-              gradient: "from-blue-500 to-indigo-500"
+              gradient: "from-purple-500 to-yellow-500"
             },
             {
               icon: <TrendingUp className="w-6 h-6" />,
               title: "Yield Farming",
               description: "Earn up to 127% APY through our automated liquidity mining protocols",
-              gradient: "from-violet-500 to-purple-500"
+              gradient: "from-purple-500 to-violet-500"
             }
           ].map((feature, index) => (
             <div

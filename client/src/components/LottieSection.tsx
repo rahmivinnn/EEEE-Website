@@ -7,7 +7,7 @@ export default function LottieSection() {
   return (
     <section className="py-32 px-6 relative overflow-hidden bg-gradient-to-b from-black via-zinc-900 to-black">
       {/* Background animated pattern */}
-      <div className="absolute inset-0 opacity-5 bg-gradient-to-br from-orange-500/10 via-amber-500/5 to-teal-500/10 animate-pulse"></div>
+      <div className="absolute inset-0 opacity-5 bg-gradient-to-br from-purple-500/10 via-violet-500/5 to-yellow-500/10 animate-pulse"></div>
       
       <div 
         ref={ref}
@@ -16,7 +16,7 @@ export default function LottieSection() {
         <h2 className="font-anton text-5xl md:text-7xl uppercase mb-8 tracking-wider">
           <span className="text-white">Interactive</span>
           <br />
-          <span className="bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">Experience</span>
+          <span className="bg-gradient-to-r from-purple-400 to-yellow-400 bg-clip-text text-transparent">Experience</span>
         </h2>
         
         <p className="text-xl text-zinc-400 mb-16 max-w-4xl mx-auto leading-relaxed">
@@ -28,12 +28,12 @@ export default function LottieSection() {
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
           {/* Coin Animation */}
           <div className="relative group">
-            <div className="bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden hover:border-orange-500/50 transition-all duration-500">
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-amber-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden hover:border-purple-500/50 transition-all duration-500">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-yellow-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10 text-center">
                 <div className="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-amber-500 rounded-full animate-spin border-4 border-orange-300/30">
-                    <div className="w-full h-full bg-gradient-to-br from-amber-400 to-orange-600 rounded-full animate-pulse"></div>
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-yellow-500 rounded-full animate-spin border-4 border-purple-300/30">
+                    <div className="w-full h-full bg-gradient-to-br from-yellow-400 to-purple-600 rounded-full animate-pulse"></div>
                   </div>
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3 tracking-wide">Coin Dynamics</h3>
@@ -46,13 +46,13 @@ export default function LottieSection() {
 
           {/* Trading Animation */}
           <div className="relative group">
-            <div className="bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden hover:border-teal-500/50 transition-all duration-500">
-              <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 to-green-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden hover:border-yellow-500/50 transition-all duration-500">
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10 text-center">
                 <div className="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
                   <div className="relative w-16 h-16">
-                    <div className="absolute inset-0 bg-gradient-to-t from-teal-500 to-green-500 rounded-lg animate-bounce"></div>
-                    <div className="absolute top-2 left-2 right-2 bottom-2 bg-gradient-to-t from-green-400 to-teal-400 rounded opacity-80 animate-pulse"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-yellow-500 to-purple-500 rounded-lg animate-bounce"></div>
+                    <div className="absolute top-2 left-2 right-2 bottom-2 bg-gradient-to-t from-purple-400 to-yellow-400 rounded opacity-80 animate-pulse"></div>
                   </div>
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3 tracking-wide">Live Trading</h3>
@@ -65,13 +65,13 @@ export default function LottieSection() {
 
           {/* Community Animation */}
           <div className="relative group">
-            <div className="bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden hover:border-blue-500/50 transition-all duration-500">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden hover:border-purple-500/50 transition-all duration-500">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-yellow-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10 text-center">
                 <div className="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
                   <div className="relative w-16 h-16">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full animate-ping"></div>
-                    <div className="absolute inset-2 bg-gradient-to-br from-cyan-400 to-blue-400 rounded-full animate-pulse"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-yellow-500 rounded-full animate-ping"></div>
+                    <div className="absolute inset-2 bg-gradient-to-br from-yellow-400 to-purple-400 rounded-full animate-pulse"></div>
                   </div>
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3 tracking-wide">Community Pulse</h3>
