@@ -52,11 +52,19 @@ export default function Web3Section() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className={`text-center mb-20 section-fade ${isInView ? 'in-view' : ''}`}>
-          <h2 className="font-anton text-5xl lg:text-6xl uppercase mb-6 tracking-wider">
-            <span className="bg-gradient-to-r from-purple-400 via-violet-400 to-yellow-400 bg-clip-text text-transparent">
-              WEB3 ECOSYSTEM
-            </span>
-          </h2>
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <h2 className="font-anton text-5xl lg:text-6xl uppercase tracking-wider">
+              <span className="bg-gradient-to-r from-purple-400 via-violet-400 to-yellow-400 bg-clip-text text-transparent">
+                WEB3 ECOSYSTEM
+              </span>
+            </h2>
+            <div className="hidden md:flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-yellow-500/10 to-purple-500/10 border border-yellow-500/20 rounded-full">
+              <svg className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M9,11H7L9,13V11M13,5L11,3V5H13M5,11V13L7,11H5M11,19V21L13,19H11M21,19L19,17H21V19M3,5L5,7V5H3M17,3H19V5L17,3V3M19,19H17L19,21V19Z"/>
+              </svg>
+              <span className="text-xs text-yellow-300 font-medium">HANDCRAFTED</span>
+            </div>
+          </div>
           <p className="text-xl text-zinc-300 max-w-3xl mx-auto leading-relaxed">
             Experience the future of decentralized finance with institutional-grade Web3 infrastructure. 
             Built for the next generation of digital asset management.
