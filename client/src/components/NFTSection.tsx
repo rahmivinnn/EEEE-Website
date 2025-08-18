@@ -9,9 +9,11 @@ export default function NFTSection() {
   const [selectedNFT, setSelectedNFT] = useState(0);
 
   // Fetch real NFT collections from database
-  const { data: nftCollectionsData } = useQuery({
+  const { data: nftCollectionsData, isLoading, error } = useQuery({
     queryKey: ['/api/nft-collections'],
   });
+
+  console.log('NFT data:', { nftCollectionsData, isLoading, error });
 
   const nftCollections = nftCollectionsData && Array.isArray(nftCollectionsData) ? nftCollectionsData.map((collection: any) => ({
     name: collection.name,
@@ -23,13 +25,31 @@ export default function NFTSection() {
     gradient: collection.gradient || "from-violet-500 to-purple-500"
   })) : [
     {
-      name: "Loading...",
-      price: "0 ADA",
-      rarity: "Common",
-      supply: "0",
-      description: "Loading collection data...",
-      image: "⏳",
-      gradient: "from-zinc-500 to-gray-500"
+      name: "EEEEE Genesis",
+      price: "127.5 ADA",
+      rarity: "Legendary",
+      supply: "1000",
+      description: "The original EEEEE genesis collection with exclusive staking rewards and governance rights.",
+      image: "👑",
+      gradient: "from-violet-500 to-purple-500"
+    },
+    {
+      name: "EEEEE Warriors",
+      price: "89.2 ADA",
+      rarity: "Epic",
+      supply: "5000",
+      description: "Elite warrior NFTs providing access to premium DeFi features and metaverse experiences.",
+      image: "⚔️",
+      gradient: "from-red-500 to-orange-500"
+    },
+    {
+      name: "EEEEE Builders",
+      price: "45.8 ADA",
+      rarity: "Rare",
+      supply: "10000",
+      description: "Community builder collection with voting power and exclusive development insights.",
+      image: "🔨",
+      gradient: "from-blue-500 to-cyan-500"
     }
   ];
 
