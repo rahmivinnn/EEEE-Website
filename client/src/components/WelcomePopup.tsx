@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { X, Volume2, VolumeX } from "lucide-react";
+// Using real SVG icons instead of AI-generated ones
 import mascotImage from "@assets/WhatsApp_Image_2025-08-17_at_3.41.31_PM-removebg-preview_1755512185519.png";
 
 export default function WelcomePopup() {
@@ -33,7 +33,9 @@ export default function WelcomePopup() {
           onClick={handleClose}
           className="absolute top-4 right-4 text-zinc-400 hover:text-white transition-colors"
         >
-          <X className="w-6 h-6" />
+          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/>
+          </svg>
         </button>
 
         {/* Mascot with Lottie animation background */}
@@ -101,7 +103,10 @@ export default function WelcomePopup() {
             onClick={toggleSound}
             className="w-full px-4 py-2 bg-zinc-800/50 hover:bg-zinc-700/50 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 text-sm border border-zinc-600/30"
           >
-            {soundEnabled ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />}
+            {soundEnabled ? 
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.85 14,18.71V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.76 16.5,12M3,9V15H7L12,20V4L7,9H3Z"/></svg> : 
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12,4L9.91,6.09L12,8.18M4.27,3L3,4.27L7.73,9H3V15H7L12,20V13.27L16.25,17.53C15.58,18.04 14.83,18.46 14,18.7V20.77C15.38,20.45 16.63,19.82 17.68,18.96L19.73,21L21,19.73L12,10.73M19,12C19,12.94 18.8,13.82 18.46,14.64L19.97,16.15C20.62,14.91 21,13.5 21,12C21,7.72 18,4.14 14,3.23V5.29C16.89,6.15 19,8.83 19,12M16.5,12C16.5,10.23 15.5,8.71 14,7.97V10.18L16.45,12.63C16.5,12.43 16.5,12.21 16.5,12Z"/></svg>
+            }
             <span>{soundEnabled ? "Sound On" : "Sound Off"}</span>
           </button>
         </div>

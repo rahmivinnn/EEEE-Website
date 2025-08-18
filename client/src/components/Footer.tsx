@@ -1,4 +1,4 @@
-import { Twitter, MessageCircle, BarChart3, ArrowRightLeft } from "lucide-react";
+// Using real SVG icons instead of AI-generated ones
 import { SiDiscord } from "react-icons/si";
 
 export default function Footer() {
@@ -19,7 +19,9 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="group bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 hover:border-violet-500/50 px-6 py-8 rounded-xl transition-all duration-500 flex flex-col items-center gap-4"
             >
-              <Twitter className="w-8 h-8 text-zinc-400 group-hover:text-violet-400 transition-colors" />
+              <svg className="w-8 h-8 text-zinc-400 group-hover:text-violet-400 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+              </svg>
               <span className="font-semibold text-zinc-300 group-hover:text-white transition-colors tracking-wide">Twitter</span>
             </a>
             
@@ -39,7 +41,9 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="group bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 hover:border-indigo-500/50 px-6 py-8 rounded-xl transition-all duration-500 flex flex-col items-center gap-4"
             >
-              <BarChart3 className="w-8 h-8 text-zinc-400 group-hover:text-indigo-400 transition-colors" />
+              <svg className="w-8 h-8 text-zinc-400 group-hover:text-indigo-400 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M22,21H2V3H4V19H6V10H10V19H12V6H16V19H18V14H22V21Z"/>
+              </svg>
               <span className="font-semibold text-zinc-300 group-hover:text-white transition-colors tracking-wide">Analytics</span>
             </a>
             
@@ -49,7 +53,9 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="group bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 hover:border-cyan-500/50 px-6 py-8 rounded-xl transition-all duration-500 flex flex-col items-center gap-4"
             >
-              <ArrowRightLeft className="w-8 h-8 text-zinc-400 group-hover:text-cyan-400 transition-colors" />
+              <svg className="w-8 h-8 text-zinc-400 group-hover:text-cyan-400 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6.99,11L3,15L6.99,19V16H14V14H6.99V11M21,9L17,5V8H10V10H17V13L21,9Z"/>
+              </svg>
               <span className="font-semibold text-zinc-300 group-hover:text-white transition-colors tracking-wide">Trading</span>
             </a>
             

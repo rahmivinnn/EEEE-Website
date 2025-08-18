@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Zap, TrendingUp, Users, Coins, Wallet, DollarSign, BarChart3, Layers, Network, Server, Database, Shield } from "lucide-react";
+// Using real SVG icons instead of AI-generated ones
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useQuery } from "@tanstack/react-query";
 import EEEEEPopup from "@/components/EEEEEPopup";
@@ -79,22 +79,32 @@ export default function Web3Section() {
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="text-center p-4 bg-gradient-to-br from-purple-500/10 to-yellow-500/10 rounded-2xl border border-purple-500/20">
-                <DollarSign className="w-6 h-6 mx-auto mb-2 text-purple-400" />
+                <svg className="w-6 h-6 mx-auto mb-2 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  <circle cx="12" cy="8" r="2"/>
+                  <path d="M12 12c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
                 <div className="text-3xl font-bold text-purple-400 mb-2">{price}</div>
                 <div className="text-sm text-zinc-400">PRICE</div>
               </div>
               <div className="text-center p-4 bg-gradient-to-br from-yellow-500/10 to-purple-500/10 rounded-2xl border border-yellow-500/20">
-                <Users className="w-6 h-6 mx-auto mb-2 text-yellow-400" />
+                <svg className="w-6 h-6 mx-auto mb-2 text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zM4 18v-4h3v4h2v-7.5c0-1.1.9-2 2-2h2c1.1 0 2 .9 2 2V18h2v-4h3v4h2v-7.5c0-2.21-1.79-4-4-4H8c-2.21 0-4 1.79-4 4V18h2z"/>
+                </svg>
                 <div className="text-3xl font-bold text-yellow-400 mb-2">{holders}</div>
                 <div className="text-sm text-zinc-400">HOLDERS</div>
               </div>
               <div className="text-center p-4 bg-gradient-to-br from-purple-500/10 to-violet-500/10 rounded-2xl border border-purple-500/20">
-                <BarChart3 className="w-6 h-6 mx-auto mb-2 text-purple-400" />
+                <svg className="w-6 h-6 mx-auto mb-2 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M22,21H2V3H4V19H6V10H10V19H12V6H16V19H18V14H22V21Z"/>
+                </svg>
                 <div className="text-3xl font-bold text-purple-400 mb-2">{volume24h}</div>
                 <div className="text-sm text-zinc-400">24H VOLUME</div>
               </div>
               <div className="text-center p-4 bg-gradient-to-br from-yellow-500/10 to-amber-500/10 rounded-2xl border border-yellow-500/20">
-                <Coins className="w-6 h-6 mx-auto mb-2 text-yellow-400" />
+                <svg className="w-6 h-6 mx-auto mb-2 text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z"/>
+                </svg>
                 <div className="text-3xl font-bold text-yellow-400 mb-2">{marketCap}</div>
                 <div className="text-sm text-zinc-400">MARKET CAP</div>
               </div>
@@ -108,7 +118,9 @@ export default function Web3Section() {
           <div className="bg-gradient-to-br from-zinc-900/90 to-black/90 backdrop-blur-xl border border-zinc-800 rounded-3xl p-8">
             <div className="flex items-center gap-4 mb-6">
               <div className="p-3 bg-gradient-to-br from-purple-500 to-yellow-600 rounded-xl">
-                <Wallet className="w-6 h-6 text-white" />
+                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M21,18V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5A2,2 0 0,1 5,3H19A2,2 0 0,1 21,5V6H12A2,2 0 0,0 10,8V16A2,2 0 0,0 12,18M12,16H22V8H12M16,13.5A1.5,1.5 0 0,1 14.5,12A1.5,1.5 0 0,1 16,10.5A1.5,1.5 0 0,1 17.5,12A1.5,1.5 0 0,1 16,13.5Z"/>
+                </svg>
               </div>
               <h3 className="text-2xl font-bold text-white tracking-wide">CARDANO WALLET</h3>
             </div>
@@ -150,7 +162,9 @@ export default function Web3Section() {
           <div className="bg-gradient-to-br from-zinc-900/90 to-black/90 backdrop-blur-xl border border-zinc-800 rounded-3xl p-8">
             <div className="flex items-center gap-4 mb-6">
               <div className="p-3 bg-gradient-to-br from-yellow-500 to-purple-600 rounded-xl">
-                <Shield className="w-6 h-6 text-white" />
+                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.6 14.8,10V11.5C15.4,11.5 16,12.1 16,12.7V16.2C16,16.8 15.4,17.3 14.8,17.3H9.2C8.6,17.3 8,16.8 8,16.2V12.7C8,12.1 8.6,11.5 9.2,11.5V10C9.2,8.6 10.6,7 12,7M12,8.2C11.2,8.2 10.5,8.7 10.5,10V11.5H13.5V10C13.5,8.7 12.8,8.2 12,8.2Z"/>
+                </svg>
               </div>
               <h3 className="text-2xl font-bold text-white tracking-wide">STAKING POOL</h3>
             </div>
@@ -192,25 +206,25 @@ export default function Web3Section() {
         <div className={`grid md:grid-cols-2 lg:grid-cols-4 gap-6 section-fade ${isInView ? 'in-view' : ''}`} style={{animationDelay: '0.6s'}}>
           {[
             {
-              icon: <Zap className="w-6 h-6" />,
+              icon: <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M7,2V13H10V22L17,10H13L17,2H7Z"/></svg>,
               title: "Lightning Fast",
               description: "Sub-second transaction finality on Cardano's advanced blockchain infrastructure",
               gradient: "from-purple-500 to-yellow-500"
             },
             {
-              icon: <Shield className="w-6 h-6" />,
+              icon: <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.6 14.8,10V11.5C15.4,11.5 16,12.1 16,12.7V16.2C16,16.8 15.4,17.3 14.8,17.3H9.2C8.6,17.3 8,16.8 8,16.2V12.7C8,12.1 8.6,11.5 9.2,11.5V10C9.2,8.6 10.6,7 12,7M12,8.2C11.2,8.2 10.5,8.7 10.5,10V11.5H13.5V10C13.5,8.7 12.8,8.2 12,8.2Z"/></svg>,
               title: "Military Grade Security",
               description: "Multi-signature wallets and smart contract audits by top security firms",
               gradient: "from-yellow-500 to-purple-500"
             },
             {
-              icon: <Network className="w-6 h-6" />,
+              icon: <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6M6,4H13V9H18V20H6V4M8,12V14H16V12H8M8,16V18H13V16H8Z"/></svg>,
               title: "Cross-Chain Bridge",
               description: "Seamlessly bridge assets across Ethereum, Polygon, and Cardano networks",
               gradient: "from-purple-500 to-yellow-500"
             },
             {
-              icon: <TrendingUp className="w-6 h-6" />,
+              icon: <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M16,6L18.29,8.29L13.41,13.17L9.41,9.17L2,16.59L3.41,18L9.41,12L13.41,16L19.71,9.71L22,12V6H16Z"/></svg>,
               title: "Yield Farming",
               description: "Earn up to 127% APY through our automated liquidity mining protocols",
               gradient: "from-purple-500 to-violet-500"
