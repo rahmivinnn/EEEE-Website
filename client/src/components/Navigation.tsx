@@ -15,7 +15,7 @@ export default function Navigation() {
   return (
     <nav className="fixed top-0 w-full z-[100] bg-black/80 backdrop-blur-xl border-b border-zinc-800/50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-24">
           <div className="font-anton text-3xl tracking-wider">
             <span className="text-white">$</span>
             <span className="bg-gradient-to-r from-violet-400 to-purple-300 bg-clip-text text-transparent">EEEEE</span>

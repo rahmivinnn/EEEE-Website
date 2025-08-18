@@ -48,7 +48,7 @@ export default function Web3Section() {
   };
 
   return (
-    <section id="web3" className="py-32 px-6 lg:px-8 relative" ref={ref}>
+    <section id="web3" className="py-32 px-6 lg:px-8 relative pt-40" ref={ref}>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className={`text-center mb-20 section-fade ${isInView ? 'in-view' : ''}`}>

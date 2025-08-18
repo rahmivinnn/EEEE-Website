@@ -4,7 +4,7 @@ export default function TokenomicsSection() {
   const { ref, isInView } = useScrollAnimation();
 
   return (
-    <section id="tokenomics" className="py-32 px-6 bg-gradient-to-b from-black to-zinc-950">
+    <section id="tokenomics" className="py-32 px-6 bg-gradient-to-b from-black to-zinc-950 pt-40">
       <div 
         ref={ref}
         className={`max-w-7xl mx-auto section-fade ${isInView ? 'in-view' : ''}`}

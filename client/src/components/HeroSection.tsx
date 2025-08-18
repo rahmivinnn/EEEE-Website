@@ -5,7 +5,7 @@ export default function HeroSection() {
   const { ref, isInView } = useScrollAnimation();
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-6 pt-20 relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center px-6 pt-32 relative overflow-hidden">
       {/* Premium background elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-zinc-900 to-black"></div>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(139,92,246,0.15),transparent_70%)]"></div>
