@@ -49,7 +49,7 @@ export default function DeFiSection() {
   };
 
   return (
-    <section id="defi" className="py-32 px-6 lg:px-8 relative pt-40" ref={ref}>
+    <section id="defi" className="pt-40 pb-32 px-6 lg:px-8 relative" ref={ref}>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className={`text-center mb-20 section-fade ${isInView ? 'in-view' : ''}`}>

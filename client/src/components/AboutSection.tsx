@@ -4,7 +4,7 @@ export default function AboutSection() {
   const { ref, isInView } = useScrollAnimation();
 
   return (
-    <section id="about" className="py-32 px-6 relative pt-40">
+    <section id="about" className="pt-40 pb-32 px-6 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-zinc-900/50 to-transparent"></div>
       
       <div 
