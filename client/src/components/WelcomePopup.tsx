@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { X, Volume2, VolumeX } from "lucide-react";
-import { Player } from '@lottiefiles/react-lottie-player';
 import mascotImage from "@assets/WhatsApp_Image_2025-08-17_at_3.41.31_PM-removebg-preview_1755512185519.png";
 
 export default function WelcomePopup() {
@@ -40,15 +39,9 @@ export default function WelcomePopup() {
         {/* Mascot with Lottie animation background */}
         <div className="text-center mb-6">
           <div className="relative inline-block w-28 h-28 mx-auto">
-            {/* Lottie animation overlay for immersive effect */}
+            {/* Animated background glow effect */}
             <div className="absolute inset-0 w-32 h-32 -top-2 -left-2">
-              <Player
-                autoplay
-                loop
-                src="https://lottie.host/embed/7a5e7a8d-4a2c-4e7f-9c5a-2b3e1f4c8d9a/3fG2h8kL6m.json"
-                style={{ height: '100%', width: '100%' }}
-                className="opacity-30"
-              />
+              <div className="w-full h-full bg-gradient-to-br from-orange-500/20 to-amber-500/20 rounded-full blur-xl animate-pulse"></div>
             </div>
             <img 
               src={mascotImage} 

@@ -1,4 +1,3 @@
-import { Player } from '@lottiefiles/react-lottie-player';
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import LottieButton from './LottieButton';
 
@@ -7,15 +6,8 @@ export default function LottieSection() {
 
   return (
     <section className="py-32 px-6 relative overflow-hidden bg-gradient-to-b from-black via-zinc-900 to-black">
-      {/* Background Lottie animation */}
-      <div className="absolute inset-0 opacity-5">
-        <Player
-          autoplay
-          loop
-          src="https://lottie.host/embed/a1b2c3d4-e5f6-g7h8-i9j0-k1l2m3n4o5p6/8gH9i3kQ1t.json"
-          style={{ height: '100%', width: '100%' }}
-        />
-      </div>
+      {/* Background animated pattern */}
+      <div className="absolute inset-0 opacity-5 bg-gradient-to-br from-orange-500/10 via-amber-500/5 to-teal-500/10 animate-pulse"></div>
       
       <div 
         ref={ref}
@@ -39,13 +31,10 @@ export default function LottieSection() {
             <div className="bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden hover:border-orange-500/50 transition-all duration-500">
               <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-amber-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10 text-center">
-                <div className="w-24 h-24 mx-auto mb-6">
-                  <Player
-                    autoplay
-                    loop
-                    src="https://lottie.host/embed/coin-spin-animation/9hI0j4kR2u.json"
-                    style={{ height: '100%', width: '100%' }}
-                  />
+                <div className="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-amber-500 rounded-full animate-spin border-4 border-orange-300/30">
+                    <div className="w-full h-full bg-gradient-to-br from-amber-400 to-orange-600 rounded-full animate-pulse"></div>
+                  </div>
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3 tracking-wide">Coin Dynamics</h3>
                 <p className="text-zinc-400 text-sm leading-relaxed">
@@ -60,13 +49,11 @@ export default function LottieSection() {
             <div className="bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden hover:border-teal-500/50 transition-all duration-500">
               <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 to-green-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10 text-center">
-                <div className="w-24 h-24 mx-auto mb-6">
-                  <Player
-                    autoplay
-                    loop
-                    src="https://lottie.host/embed/trading-chart-animation/0iJ1k5lS3v.json"
-                    style={{ height: '100%', width: '100%' }}
-                  />
+                <div className="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+                  <div className="relative w-16 h-16">
+                    <div className="absolute inset-0 bg-gradient-to-t from-teal-500 to-green-500 rounded-lg animate-bounce"></div>
+                    <div className="absolute top-2 left-2 right-2 bottom-2 bg-gradient-to-t from-green-400 to-teal-400 rounded opacity-80 animate-pulse"></div>
+                  </div>
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3 tracking-wide">Live Trading</h3>
                 <p className="text-zinc-400 text-sm leading-relaxed">
@@ -81,13 +68,11 @@ export default function LottieSection() {
             <div className="bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden hover:border-blue-500/50 transition-all duration-500">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10 text-center">
-                <div className="w-24 h-24 mx-auto mb-6">
-                  <Player
-                    autoplay
-                    loop
-                    src="https://lottie.host/embed/community-pulse-animation/1jK2l6mT4w.json"
-                    style={{ height: '100%', width: '100%' }}
-                  />
+                <div className="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+                  <div className="relative w-16 h-16">
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full animate-ping"></div>
+                    <div className="absolute inset-2 bg-gradient-to-br from-cyan-400 to-blue-400 rounded-full animate-pulse"></div>
+                  </div>
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3 tracking-wide">Community Pulse</h3>
                 <p className="text-zinc-400 text-sm leading-relaxed">

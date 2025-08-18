@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { X, ExternalLink, Copy, Star } from "lucide-react";
-import { Player } from '@lottiefiles/react-lottie-player';
 import eeeeeMainImage from "@assets/WhatsApp_Image_2025-08-17_at_3.41.31_PM-removebg-preview_1755512185519.png";
 import eeeeeSmallImage from "@assets/image_1755511815277.png";
 

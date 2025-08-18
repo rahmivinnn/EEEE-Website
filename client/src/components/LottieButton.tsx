@@ -1,4 +1,3 @@
-import { Player } from '@lottiefiles/react-lottie-player';
 import { useState } from 'react';
 
 interface LottieButtonProps {
@@ -38,14 +37,9 @@ export default function LottieButton({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Lottie animation background */}
-      <div className="absolute inset-0 opacity-20">
-        <Player
-          autoplay={isHovered}
-          loop
-          src={lottieUrl}
-          style={{ height: '100%', width: '100%' }}
-        />
+      {/* Animated background effect */}
+      <div className={`absolute inset-0 opacity-20 transition-all duration-300 ${isHovered ? 'scale-110' : 'scale-100'}`}>
+        <div className="w-full h-full bg-gradient-to-br from-current/20 to-current/10 rounded-xl animate-pulse"></div>
       </div>
       
       {/* Button content */}

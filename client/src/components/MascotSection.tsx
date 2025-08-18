@@ -1,5 +1,4 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { Player } from '@lottiefiles/react-lottie-player';
 import mascotImage1 from "@assets/WhatsApp_Image_2025-08-17_at_3.41.31_PM-removebg-preview_1755512185519.png";
 import mascotImage2 from "@assets/WhatsApp_Image_2025-08-17_at_3.41.31_PM-removebg-preview_1755511830313.png";
 
@@ -31,15 +30,8 @@ export default function MascotSection() {
           <div className="relative">
             <div className="bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-3xl p-12 backdrop-blur-xl relative overflow-hidden group hover:border-orange-500/50 transition-all duration-500">
               <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-amber-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              {/* Lottie animation background */}
-              <div className="absolute inset-0 opacity-20">
-                <Player
-                  autoplay
-                  loop
-                  src="https://lottie.host/embed/9b2c7d4e-5f6a-4b8c-9d3e-1a2b3c4d5e6f/4aB5c9kM7n.json"
-                  style={{ height: '100%', width: '100%' }}
-                />
-              </div>
+              {/* Animated background pattern */}
+              <div className="absolute inset-0 opacity-20 bg-gradient-to-br from-orange-500/10 to-amber-500/10 animate-pulse"></div>
               <div className="relative z-10 text-center">
                 <div className="relative inline-block mb-8">
                   <img 
@@ -61,15 +53,8 @@ export default function MascotSection() {
           <div className="relative">
             <div className="bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-3xl p-12 backdrop-blur-xl relative overflow-hidden group hover:border-teal-500/50 transition-all duration-500">
               <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 to-green-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              {/* Lottie animation background */}
-              <div className="absolute inset-0 opacity-15">
-                <Player
-                  autoplay
-                  loop
-                  src="https://lottie.host/embed/1c2d3e4f-5g6h-7i8j-9k0l-1m2n3o4p5q6r/5cD6e0kN8p.json"
-                  style={{ height: '100%', width: '100%' }}
-                />
-              </div>
+              {/* Animated background pattern */}
+              <div className="absolute inset-0 opacity-15 bg-gradient-to-br from-teal-500/10 to-green-500/10 animate-pulse"></div>
               <div className="relative z-10 text-center">
                 <div className="relative inline-block mb-8">
                   <img 
