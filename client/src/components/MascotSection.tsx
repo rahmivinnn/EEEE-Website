@@ -1,6 +1,6 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import mascotImage1 from "@assets/WhatsApp_Image_2025-08-17_at_3.41.31_PM__1_-removebg-preview_1755421217465.png";
-import mascotImage2 from "@assets/WhatsApp_Image_2025-08-17_at_3.41.31_PM-removebg-preview_1755421229215.png";
+import mascotImage1 from "@assets/image_1755512106107.png";
+import mascotImage2 from "@assets/WhatsApp_Image_2025-08-17_at_3.41.31_PM-removebg-preview_1755511830313.png";
 
 export default function MascotSection() {
   const { ref, isInView } = useScrollAnimation();
