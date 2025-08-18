@@ -16,18 +16,9 @@ export default function Navigation() {
     <nav className="fixed top-0 w-full z-[100] bg-black/80 backdrop-blur-xl border-b border-zinc-800/50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <div className="flex items-center gap-4">
-            <div className="font-anton text-3xl tracking-wider">
-              <span className="text-white">$</span>
-              <span className="bg-gradient-to-r from-violet-400 to-purple-300 bg-clip-text text-transparent">EEEEE</span>
-            </div>
-            {/* Human-Made indicator */}
-            <div className="hidden lg:flex items-center gap-2 px-3 py-1 bg-purple-500/10 border border-purple-500/20 rounded-full">
-              <svg className="w-3 h-3 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z"/>
-              </svg>
-              <span className="text-xs text-purple-300 font-medium">HUMAN</span>
-            </div>
+          <div className="font-anton text-3xl tracking-wider">
+            <span className="text-white">$</span>
+            <span className="bg-gradient-to-r from-violet-400 to-purple-300 bg-clip-text text-transparent">EEEEE</span>
           </div>
           
           {/* Desktop Menu */}

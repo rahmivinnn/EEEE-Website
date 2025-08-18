@@ -59,16 +59,10 @@ export default function WelcomePopup() {
           <h2 className="font-anton text-2xl uppercase mb-3 bg-gradient-to-r from-purple-400 to-yellow-400 bg-clip-text text-transparent">
             Welcome to $EEEEE!
           </h2>
-          <p className="text-zinc-300 leading-relaxed text-sm mb-3">
+          <p className="text-zinc-300 leading-relaxed text-sm">
             Ready to experience the most <span className="font-bold text-yellow-400">dominant force</span> on Cardano? 
             Let's make some noise together!
           </p>
-          <div className="flex items-center justify-center gap-2 mb-2">
-            <svg className="w-3 h-3 text-green-400" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/>
-            </svg>
-            <span className="text-xs text-green-400 font-medium tracking-wider">100% HUMAN CRAFTED</span>
-          </div>
         </div>
 
         {/* Interactive buttons with natural styling */}

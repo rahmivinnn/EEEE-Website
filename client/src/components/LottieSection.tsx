@@ -27,8 +27,8 @@ export default function LottieSection() {
         {/* Interactive Lottie showcase */}
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
           {/* Coin Animation */}
-          <div className="relative group">
-            <div className="bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden hover:border-purple-500/50 transition-all duration-500">
+          <div className="relative group animate-organic-float" style={{animationDelay: '0s'}}>
+            <div className="bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden hover:border-purple-500/50 transition-all duration-500 animate-subtle-breath">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-yellow-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10 text-center">
                 <div className="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
@@ -47,8 +47,8 @@ export default function LottieSection() {
           </div>
 
           {/* Trading Animation */}
-          <div className="relative group">
-            <div className="bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden hover:border-yellow-500/50 transition-all duration-500">
+          <div className="relative group animate-organic-float" style={{animationDelay: '0.7s'}}>
+            <div className="bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden hover:border-yellow-500/50 transition-all duration-500 animate-subtle-breath">
               <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10 text-center">
                 <div className="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
@@ -67,8 +67,8 @@ export default function LottieSection() {
           </div>
 
           {/* Community Animation */}
-          <div className="relative group">
-            <div className="bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden hover:border-purple-500/50 transition-all duration-500">
+          <div className="relative group animate-organic-float" style={{animationDelay: '1.4s'}}>
+            <div className="bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden hover:border-purple-500/50 transition-all duration-500 animate-subtle-breath">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-yellow-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10 text-center">
                 <div className="w-24 h-24 mx-auto mb-6 flex items-center justify-center">

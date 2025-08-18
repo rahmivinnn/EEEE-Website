@@ -95,24 +95,9 @@ export default function Footer() {
           </div>
         </div>
         
-        {/* Hand-Crafted Badge */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-zinc-800/50 to-zinc-900/50 border border-zinc-700 rounded-full backdrop-blur-sm">
-            <svg className="w-5 h-5 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M21.5,9L20.09,7.59L12,15.67L3.91,7.59L2.5,9L12,18.5L21.5,9Z"/>
-              <path d="M7,6V8H9V6C9,4.89 9.89,4 11,4H13C14.11,4 15,4.89 15,6V8H17V6C17,3.79 15.21,2 13,2H11C8.79,2 7,3.79 7,6Z"/>
-            </svg>
-            <span className="text-sm font-medium text-zinc-300 tracking-wider uppercase">Hand-Crafted by Humans</span>
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-          </div>
-        </div>
-
         <div className="text-center pt-12 border-t border-zinc-800">
           <p className="text-zinc-500 tracking-wide">
             © 2025 $EEEEE Protocol. Institutional-grade digital asset infrastructure.
-          </p>
-          <p className="text-xs text-zinc-600 mt-2 uppercase tracking-wider">
-            Authentically designed • Zero AI generation
           </p>
         </div>
       </div>

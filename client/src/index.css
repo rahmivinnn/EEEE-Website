@@ -194,16 +194,28 @@
   
   @keyframes noise {
     0% { transform: translate(0, 0); }
-    10% { transform: translate(-5px, -5px); }
-    20% { transform: translate(-10px, 5px); }
-    30% { transform: translate(5px, -10px); }
-    40% { transform: translate(-5px, 15px); }
-    50% { transform: translate(-10px, 5px); }
-    60% { transform: translate(15px, 0); }
-    70% { transform: translate(0, 10px); }
-    80% { transform: translate(-15px, 0); }
-    90% { transform: translate(10px, 5px); }
-    100% { transform: translate(5px, 0); }
+    10% { transform: translate(-2px, -1px); }
+    20% { transform: translate(-3px, 2px); }
+    30% { transform: translate(1px, -2px); }
+    40% { transform: translate(-1px, 3px); }
+    50% { transform: translate(-2px, 1px); }
+    60% { transform: translate(3px, 0); }
+    70% { transform: translate(0, 2px); }
+    80% { transform: translate(-3px, 0); }
+    90% { transform: translate(2px, 1px); }
+    100% { transform: translate(1px, 0); }
+  }
+
+  @keyframes organic-float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-8px) rotate(1deg); }
+    50% { transform: translateY(-5px) rotate(0deg); }
+    75% { transform: translateY(-12px) rotate(-1deg); }
+  }
+
+  @keyframes subtle-breath {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.02) rotate(0.5deg); }
   }
   
   .animate-float {
@@ -216,6 +228,14 @@
   
   .animate-noise {
     animation: noise 0.2s infinite;
+  }
+
+  .animate-organic-float {
+    animation: organic-float 4s ease-in-out infinite;
+  }
+
+  .animate-subtle-breath {
+    animation: subtle-breath 3s ease-in-out infinite;
   }
   
   .metaverse-bg {
