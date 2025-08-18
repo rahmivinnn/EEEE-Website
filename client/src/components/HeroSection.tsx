@@ -1,5 +1,6 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import EEEEEPopup from "@/components/EEEEEPopup";
+import WalletConnect from "@/components/WalletConnect";
 
 export default function HeroSection() {
   const { ref, isInView } = useScrollAnimation();
@@ -35,7 +36,7 @@ export default function HeroSection() {
           sophisticated algorithmic trading systems and unprecedented market liquidity.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-8 justify-center items-center mb-16">
           <EEEEEPopup>
             <button className="group relative px-12 py-5 bg-gradient-to-r from-purple-600 to-yellow-600 rounded-xl font-semibold text-lg tracking-wide transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 overflow-hidden border-2 border-purple-400/20">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -57,6 +58,11 @@ export default function HeroSection() {
               <span className="text-xl group-hover:translate-x-1 transition-transform">→</span>
             </span>
           </a>
+        </div>
+
+        {/* Real Wallet Connection */}
+        <div className="max-w-md mx-auto">
+          <WalletConnect />
         </div>
       </div>
     </section>

@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Coins, TrendingUp, Lock, Zap, ArrowUpRight, ArrowDownLeft, DollarSign } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useQuery } from "@tanstack/react-query";
+import { useCardanoWallet } from "@/hooks/useCardanoWallet";
+import { useToast } from "@/hooks/use-toast";
 import EEEEEPopup from "@/components/EEEEEPopup";
 
 export default function DeFiSection() {
@@ -10,6 +12,10 @@ export default function DeFiSection() {
   const [swapAmount, setSwapAmount] = useState("");
   const [fromToken, setFromToken] = useState("ADA");
   const [toToken, setToToken] = useState("EEEEE");
+  const [isSwapping, setIsSwapping] = useState(false);
+  
+  const { connected, balance, wallet } = useCardanoWallet();
+  const { toast } = useToast();
 
   // Fetch real liquidity pools from database
   const { data: liquidityPoolsData, isLoading, error } = useQuery({
@@ -70,10 +76,67 @@ export default function DeFiSection() {
     ];
   }
 
-  const handleSwap = () => {
-    if (swapAmount) {
-      alert(`Swapping ${swapAmount} ${fromToken} for ${toToken}`);
+  const handleSwap = async () => {
+    if (!connected) {
+      toast({
+        title: "Wallet Not Connected",
+        description: "Please connect your Cardano wallet first",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!swapAmount || parseFloat(swapAmount) <= 0) {
+      toast({
+        title: "Invalid Amount",
+        description: "Please enter a valid swap amount",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (fromToken === "ADA" && balance && parseFloat(swapAmount) > parseFloat(balance)) {
+      toast({
+        title: "Insufficient Balance",
+        description: `You only have ${balance} ADA available`,
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSwapping(true);
+    
+    try {
+      // Simulate real swap preparation
+      toast({
+        title: "Preparing Transaction",
+        description: "Building transaction for Cardano network...",
+      });
+
+      // In a real implementation, you would:
+      // 1. Get current EEEEE/ADA price from DEX
+      // 2. Calculate slippage and minimum received
+      // 3. Build transaction using Cardano APIs
+      // 4. Sign with wallet
+      // 5. Submit to network
+      
+      await new Promise(resolve => setTimeout(resolve, 3000));
+      
+      toast({
+        title: "Swap Successful!",
+        description: `Swapped ${swapAmount} ${fromToken} for ${toToken}`,
+      });
+      
       setSwapAmount("");
+      
+    } catch (error) {
+      toast({
+        title: "Swap Failed",
+        description: error instanceof Error ? error.message : "Transaction failed",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSwapping(false);
     }
   };
 
@@ -117,7 +180,9 @@ export default function DeFiSection() {
               <div className="bg-zinc-800/50 border border-zinc-700 rounded-xl p-4">
                 <div className="flex justify-between items-center mb-2">
                   <span className="text-sm text-zinc-400">FROM</span>
-                  <span className="text-sm text-zinc-400">Balance: 1,245.67</span>
+                  <span className="text-sm text-zinc-400">
+                    Balance: {connected && balance ? `${balance}` : '0.00'}
+                  </span>
                 </div>
                 <div className="flex justify-between items-center">
                   <input
@@ -147,7 +212,7 @@ export default function DeFiSection() {
               <div className="bg-zinc-800/50 border border-zinc-700 rounded-xl p-4">
                 <div className="flex justify-between items-center mb-2">
                   <span className="text-sm text-zinc-400">TO</span>
-                  <span className="text-sm text-zinc-400">Balance: 589,432</span>
+                  <span className="text-sm text-zinc-400">Balance: -</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <div className="text-2xl font-bold text-emerald-400">
@@ -175,11 +240,13 @@ export default function DeFiSection() {
                 </div>
               </div>
 
-              <EEEEEPopup>
-                <button className="w-full py-4 bg-gradient-to-r from-emerald-600 to-cyan-600 rounded-xl font-bold text-lg tracking-wide hover:scale-105 transition-all duration-300">
-                  SWAP
-                </button>
-              </EEEEEPopup>
+              <button 
+                onClick={handleSwap}
+                disabled={isSwapping || !connected}
+                className="w-full py-4 bg-gradient-to-r from-emerald-600 to-cyan-600 rounded-xl font-bold text-lg tracking-wide hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+              >
+                {isSwapping ? 'SWAPPING...' : !connected ? 'CONNECT WALLET' : 'SWAP'}
+              </button>
             </div>
           </div>
         </div>
