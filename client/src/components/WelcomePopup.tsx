@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { X, Volume2, VolumeX } from "lucide-react";
-import mascotImage from "@assets/image_1755512106107.png";
+import mascotImage from "@assets/WhatsApp_Image_2025-08-17_at_3.41.31_PM-removebg-preview_1755512185519.png";
 
 export default function WelcomePopup() {
   const [isOpen, setIsOpen] = useState(false);
