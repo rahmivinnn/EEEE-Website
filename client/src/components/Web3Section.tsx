@@ -263,30 +263,109 @@ export default function Web3Section() {
                     <span className="text-zinc-400">24H</span>
                   </div>
                 </div>
-                <div className="h-32 bg-gradient-to-r from-violet-500/10 to-purple-500/10 rounded-xl flex items-end justify-center">
-                  <div className="text-zinc-400 text-sm">📈 Advanced TradingView Integration</div>
+                <div className="h-48 bg-gradient-to-r from-violet-500/10 to-purple-500/10 rounded-xl relative overflow-hidden">
+                  {/* Mock Chart Lines */}
+                  <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 200">
+                    <defs>
+                      <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style={{stopColor: '#8B5CF6', stopOpacity: 0.4}} />
+                        <stop offset="100%" style={{stopColor: '#8B5CF6', stopOpacity: 0}} />
+                      </linearGradient>
+                    </defs>
+                    {/* Chart line */}
+                    <polyline
+                      fill="none"
+                      stroke="#8B5CF6"
+                      strokeWidth="2"
+                      points="20,150 60,120 100,140 140,100 180,90 220,70 260,85 300,60 340,45 380,30"
+                    />
+                    {/* Fill area */}
+                    <polygon
+                      fill="url(#chartGradient)"
+                      points="20,150 60,120 100,140 140,100 180,90 220,70 260,85 300,60 340,45 380,30 380,200 20,200"
+                    />
+                    {/* Grid lines */}
+                    <g stroke="#374151" strokeWidth="0.5" opacity="0.3">
+                      <line x1="0" y1="50" x2="400" y2="50" />
+                      <line x1="0" y1="100" x2="400" y2="100" />
+                      <line x1="0" y1="150" x2="400" y2="150" />
+                      <line x1="100" y1="0" x2="100" y2="200" />
+                      <line x1="200" y1="0" x2="200" y2="200" />
+                      <line x1="300" y1="0" x2="300" y2="200" />
+                    </g>
+                  </svg>
+                  <div className="absolute bottom-4 left-4 text-violet-300 font-medium">
+                    $EEEEE: $0.000005 (+12.4%)
+                  </div>
+                  <div className="absolute top-4 right-4 text-xs text-zinc-400">
+                    Live Chart
+                  </div>
                 </div>
               </div>
             </div>
             <div className="space-y-4">
               <div className="bg-black/50 rounded-2xl p-4 border border-zinc-700">
                 <h4 className="text-violet-400 font-bold mb-3">ORDER BOOK</h4>
+                <div className="flex justify-between text-xs text-zinc-500 mb-2">
+                  <span>Price (ADA)</span>
+                  <span>Amount ($EEEEE)</span>
+                </div>
                 <div className="space-y-1 text-xs">
-                  <div className="flex justify-between text-red-400">
+                  <div className="flex justify-between text-red-400 hover:bg-red-500/10 px-2 py-1 rounded">
                     <span>0.004285</span>
-                    <span>12,450</span>
+                    <span>12,450,890</span>
                   </div>
-                  <div className="flex justify-between text-red-400">
+                  <div className="flex justify-between text-red-400 hover:bg-red-500/10 px-2 py-1 rounded">
                     <span>0.004280</span>
-                    <span>8,920</span>
+                    <span>8,920,456</span>
                   </div>
+                  <div className="border-t border-zinc-600 my-2"></div>
+                  <div className="flex justify-between text-green-400 hover:bg-green-500/10 px-2 py-1 rounded">
+                    <span>0.004275</span>
+                    <span>15,680,234</span>
+                  </div>
+                  <div className="flex justify-between text-green-400 hover:bg-green-500/10 px-2 py-1 rounded">
+                    <span>0.004270</span>
+                    <span>22,340,567</span>
+                  </div>
+                  <div className="flex justify-between text-green-400 hover:bg-green-500/10 px-2 py-1 rounded">
+                    <span>0.004265</span>
+                    <span>18,920,123</span>
+                  </div>
+                  <div className="flex justify-between text-green-400 hover:bg-green-500/10 px-2 py-1 rounded">
+                    <span>0.004260</span>
+                    <span>25,450,890</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-black/50 rounded-2xl p-4 border border-zinc-700">
+                <h4 className="text-yellow-400 font-bold mb-3">RECENT TRADES</h4>
+                <div className="flex justify-between text-xs text-zinc-500 mb-2">
+                  <span>Price</span>
+                  <span>Amount</span>
+                  <span>Time</span>
+                </div>
+                <div className="space-y-1 text-xs">
                   <div className="flex justify-between text-green-400">
                     <span>0.004275</span>
-                    <span>15,680</span>
+                    <span>1,245K</span>
+                    <span>11:04:23</span>
+                  </div>
+                  <div className="flex justify-between text-red-400">
+                    <span>0.004270</span>
+                    <span>890K</span>
+                    <span>11:04:19</span>
                   </div>
                   <div className="flex justify-between text-green-400">
-                    <span>0.004270</span>
-                    <span>22,340</span>
+                    <span>0.004278</span>
+                    <span>2,156K</span>
+                    <span>11:04:15</span>
+                  </div>
+                  <div className="flex justify-between text-green-400">
+                    <span>0.004282</span>
+                    <span>567K</span>
+                    <span>11:04:12</span>
                   </div>
                 </div>
               </div>
@@ -298,6 +377,39 @@ export default function Web3Section() {
                 </EEEEEPopup>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Trading Features */}
+        <div className={`mt-12 grid md:grid-cols-3 gap-6 section-fade ${isInView ? 'in-view' : ''}`} style={{animationDelay: '1.0s'}}>
+          <div className="bg-gradient-to-br from-zinc-900/90 to-black/90 backdrop-blur-xl border border-zinc-800 rounded-2xl p-6 text-center">
+            <div className="inline-flex p-3 rounded-xl bg-gradient-to-r from-violet-500 to-purple-500 mb-4">
+              <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M5,5V19H19V5H5Z"/>
+              </svg>
+            </div>
+            <h4 className="text-lg font-bold text-white mb-2">Advanced Orders</h4>
+            <p className="text-zinc-400 text-sm">Stop-loss, take-profit, and limit orders with professional tools</p>
+          </div>
+          
+          <div className="bg-gradient-to-br from-zinc-900/90 to-black/90 backdrop-blur-xl border border-zinc-800 rounded-2xl p-6 text-center">
+            <div className="inline-flex p-3 rounded-xl bg-gradient-to-r from-yellow-500 to-orange-500 mb-4">
+              <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12,2L13.09,8.26L22,9L13.09,9.74L12,16L10.91,9.74L2,9L10.91,8.26L12,2Z"/>
+              </svg>
+            </div>
+            <h4 className="text-lg font-bold text-white mb-2">Lightning Fast</h4>
+            <p className="text-zinc-400 text-sm">Sub-second order execution on Cardano's high-performance network</p>
+          </div>
+          
+          <div className="bg-gradient-to-br from-zinc-900/90 to-black/90 backdrop-blur-xl border border-zinc-800 rounded-2xl p-6 text-center">
+            <div className="inline-flex p-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 mb-4">
+              <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9L10,17Z"/>
+              </svg>
+            </div>
+            <h4 className="text-lg font-bold text-white mb-2">Secure Trading</h4>
+            <p className="text-zinc-400 text-sm">Multi-signature security with institutional-grade protection</p>
           </div>
         </div>
       </div>
