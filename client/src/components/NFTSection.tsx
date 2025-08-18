@@ -15,7 +15,10 @@ export default function NFTSection() {
 
   console.log('NFT data:', { nftCollectionsData, isLoading, error });
 
-  const nftCollections = nftCollectionsData && Array.isArray(nftCollectionsData) ? nftCollectionsData.map((collection: any) => ({
+  // Process data with proper error handling  
+  let nftCollections;
+  try {
+    nftCollections = nftCollectionsData && Array.isArray(nftCollectionsData) ? nftCollectionsData.slice(0, 3).map((collection: any) => ({
     name: collection.name,
     price: collection.price,
     rarity: collection.rarity,
@@ -52,6 +55,24 @@ export default function NFTSection() {
       gradient: "from-blue-500 to-cyan-500"
     }
   ];
+  } catch (err) {
+    console.error('Error processing NFT collections:', err);
+    nftCollections = [
+      {
+        name: "EEEEE Genesis",
+        price: "127.5 ADA",
+        rarity: "Legendary",
+        supply: "1000",
+        description: "The original EEEEE genesis collection with exclusive staking rewards and governance rights.",
+        image: "👑",
+        gradient: "from-violet-500 to-purple-500"
+      }
+    ];
+  }
+
+  if (error) {
+    console.error('NFT section error:', error);
+  }
 
   return (
     <section id="nft" className="pt-40 pb-32 px-6 lg:px-8 relative" ref={ref}>
