@@ -26,8 +26,8 @@ export default function WelcomePopup() {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed top-0 left-0 w-screen h-screen z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm animate-in fade-in duration-500">
-      <div className="relative bg-gradient-to-br from-zinc-900 via-purple-900/40 to-black border-2 border-yellow-500/50 rounded-3xl p-6 w-full max-w-md mx-4 animate-in zoom-in-95 duration-700 shadow-2xl shadow-purple-500/25">
+    <div className="fixed top-0 left-0 w-screen h-screen z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm animate-in fade-in duration-500 pt-24">
+      <div className="relative bg-gradient-to-br from-zinc-900 via-purple-900/40 to-black border-2 border-yellow-500/50 rounded-3xl p-6 w-full max-w-md mx-4 animate-in zoom-in-95 duration-700 shadow-2xl shadow-purple-500/25 mt-16">
         {/* Close button */}
         <button
           onClick={handleClose}
