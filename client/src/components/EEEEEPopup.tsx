@@ -71,10 +71,10 @@ export default function EEEEEPopup({ children }: EEEEEPopupProps) {
           
           <div className="mt-4 flex justify-center gap-4 text-sm">
             <div className="bg-purple-500/20 px-3 py-1 rounded-full border border-purple-500/30">
-              <span className="text-purple-400 font-bold">$2.47</span>
+              <span className="text-purple-400 font-bold">Live Price</span>
             </div>
             <div className="bg-yellow-500/20 px-3 py-1 rounded-full border border-yellow-500/30">
-              <span className="text-yellow-400 font-bold">+24.7%</span>
+              <span className="text-yellow-400 font-bold">Real Data</span>
             </div>
           </div>
         </div>

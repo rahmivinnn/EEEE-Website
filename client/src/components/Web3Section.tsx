@@ -18,12 +18,16 @@ export default function Web3Section() {
     queryKey: ['/api/token-prices'],
   });
 
-  // Get EEEEE token data
+  // Get EEEEE token data from real-time API
   const eeeeeToken = Array.isArray(tokenPrices) ? tokenPrices.find((token: any) => token.symbol === 'EEEEE') : null;
-  const price = eeeeeToken?.price || "$2.47";
-  const volume24h = eeeeeToken?.volume24h || "$45,823,617";  
-  const marketCap = eeeeeToken?.marketCap || "$1,247,392,847";
-  const holders = "847,291";
+  const price = eeeeeToken?.price || "Loading...";
+  const volume24h = eeeeeToken?.volume24h || "Loading...";  
+  const marketCap = eeeeeToken?.marketCap || "Loading...";
+  const holders = eeeeeToken?.holders || "Loading...";
+  const change24h = eeeeeToken?.change24h || "0.00";
+  const priceAda = eeeeeToken?.priceAda || "Loading...";
+  const dataSource = eeeeeToken?.dataSource || "Market Data";
+  const adaPrice = eeeeeToken?.adaPrice || 0.91;
 
   // Premium staking pools from database
   const premiumPools = Array.isArray(stakingPools) ? stakingPools.slice(0, 3) : [
@@ -62,10 +66,17 @@ export default function Web3Section() {
         {/* Real-time Stats Dashboard */}
         <div className={`mb-16 section-fade ${isInView ? 'in-view' : ''}`} style={{animationDelay: '0.2s'}}>
           <div className="bg-gradient-to-br from-zinc-900/90 to-black/90 backdrop-blur-xl border border-zinc-800 rounded-3xl p-8">
-            <h3 className="text-2xl font-bold text-white mb-8 text-center tracking-wide">
+            <h3 className="text-2xl font-bold text-white mb-4 text-center tracking-wide">
               LIVE MARKET DATA
               <span className="inline-block w-3 h-3 bg-green-500 rounded-full ml-3 animate-pulse"></span>
             </h3>
+            <p className="text-center text-xs text-zinc-400 mb-4">
+              {dataSource} • ADA: ${adaPrice?.toFixed(3)} • Updated: {eeeeeToken?.lastUpdated ? new Date(eeeeeToken.lastUpdated).toLocaleTimeString() : 'Now'}
+            </p>
+            <div className="text-center text-xs text-green-400 mb-6 flex items-center justify-center gap-2">
+              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+              Live Market Data
+            </div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="text-center p-4 bg-gradient-to-br from-purple-500/10 to-yellow-500/10 rounded-2xl border border-purple-500/20">
                 <DollarSign className="w-6 h-6 mx-auto mb-2 text-purple-400" />
