@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Image, Crown, Star, Zap, Shield, Sparkles } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useQuery } from "@tanstack/react-query";
+import EEEEEPopup from "@/components/EEEEEPopup";
 
 export default function NFTSection() {
   const { ref, isInView } = useScrollAnimation();
@@ -122,9 +123,11 @@ export default function NFTSection() {
                   </div>
 
                   <div className="space-y-3">
-                    <button className="w-full py-4 bg-gradient-to-r from-violet-600 to-purple-600 rounded-xl font-bold text-lg tracking-wide hover:scale-105 transition-all duration-300">
-                      MINT NOW
-                    </button>
+                    <EEEEEPopup>
+                      <button className="w-full py-4 bg-gradient-to-r from-violet-600 to-purple-600 rounded-xl font-bold text-lg tracking-wide hover:scale-105 transition-all duration-300">
+                        MINT NOW
+                      </button>
+                    </EEEEEPopup>
                     <div className="grid grid-cols-2 gap-3">
                       <button className="py-3 bg-gradient-to-r from-emerald-600 to-cyan-600 rounded-lg font-semibold hover:scale-105 transition-transform">
                         View on CNFT

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Wallet, Shield, Zap, Globe, Lock, TrendingUp, Users, Coins } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useQuery } from "@tanstack/react-query";
+import EEEEEPopup from "@/components/EEEEEPopup";
 
 export default function Web3Section() {
   const { ref, isInView } = useScrollAnimation();
@@ -261,14 +262,11 @@ export default function Web3Section() {
                 </div>
               </div>
               <div className="text-center">
-                <a
-                  href="https://app.dexhunter.io/swap?tokenIdSell=&tokenIdBuy=3d7fcadb114dacbdffa1aeb2f3dc2fecec610a3b572d60f96f1341494545454545436f696e414441"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block w-full py-3 bg-gradient-to-r from-violet-600 to-purple-600 rounded-xl font-bold tracking-wide hover:scale-105 transition-all duration-300"
-                >
-                  TRADE NOW
-                </a>
+                <EEEEEPopup>
+                  <button className="w-full py-3 bg-gradient-to-r from-violet-600 to-purple-600 rounded-xl font-bold tracking-wide hover:scale-105 transition-all duration-300">
+                    TRADE NOW
+                  </button>
+                </EEEEEPopup>
               </div>
             </div>
           </div>

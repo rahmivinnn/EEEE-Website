@@ -1,4 +1,5 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import EEEEEPopup from "@/components/EEEEEPopup";
 
 export default function HeroSection() {
   const { ref, isInView } = useScrollAnimation();
@@ -35,18 +36,15 @@ export default function HeroSection() {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
-          <a 
-            href="https://app.dexhunter.io/swap?tokenIdSell=&tokenIdBuy=3d7fcadb114dacbdffa1aeb2f3dc2fecec610a3b572d60f96f1341494545454545436f696e414441" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="group relative px-12 py-5 bg-gradient-to-r from-violet-600 to-purple-600 rounded-xl font-semibold text-lg tracking-wide transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-violet-500/25 overflow-hidden"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-violet-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <span className="relative z-10 flex items-center gap-3">
-              <span>Access Trading Platform</span>
-              <span className="text-xl">→</span>
-            </span>
-          </a>
+          <EEEEEPopup>
+            <button className="group relative px-12 py-5 bg-gradient-to-r from-violet-600 to-purple-600 rounded-xl font-semibold text-lg tracking-wide transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-violet-500/25 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-violet-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <span className="relative z-10 flex items-center gap-3">
+                <span>Buy $EEEEE</span>
+                <span className="text-xl">→</span>
+              </span>
+            </button>
+          </EEEEEPopup>
           
           <a 
             href="https://discord.gg/mMfa5nkAaT" 

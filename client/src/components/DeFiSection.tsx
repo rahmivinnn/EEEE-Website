@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Coins, TrendingUp, Lock, Zap, ArrowUpRight, ArrowDownLeft, DollarSign } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useQuery } from "@tanstack/react-query";
+import EEEEEPopup from "@/components/EEEEEPopup";
 
 export default function DeFiSection() {
   const { ref, isInView } = useScrollAnimation();
@@ -136,13 +137,11 @@ export default function DeFiSection() {
                 </div>
               </div>
 
-              <button
-                onClick={handleSwap}
-                disabled={!swapAmount}
-                className="w-full py-4 bg-gradient-to-r from-emerald-600 to-cyan-600 rounded-xl font-bold text-lg tracking-wide hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
-              >
-                SWAP
-              </button>
+              <EEEEEPopup>
+                <button className="w-full py-4 bg-gradient-to-r from-emerald-600 to-cyan-600 rounded-xl font-bold text-lg tracking-wide hover:scale-105 transition-all duration-300">
+                  SWAP
+                </button>
+              </EEEEEPopup>
             </div>
           </div>
         </div>
@@ -247,9 +246,11 @@ export default function DeFiSection() {
                     />
                   </div>
                   
-                  <button className="w-full py-4 bg-gradient-to-r from-violet-600 to-purple-600 rounded-xl font-bold text-lg tracking-wide hover:scale-105 transition-all duration-300">
-                    ADD LIQUIDITY
-                  </button>
+                  <EEEEEPopup>
+                    <button className="w-full py-4 bg-gradient-to-r from-violet-600 to-purple-600 rounded-xl font-bold text-lg tracking-wide hover:scale-105 transition-all duration-300">
+                      ADD LIQUIDITY
+                    </button>
+                  </EEEEEPopup>
                 </div>
               </div>
             </div>
