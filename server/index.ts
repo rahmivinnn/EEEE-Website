@@ -1,7 +1,12 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import { seedDatabase } from "./seedData";
+import { startRewardCalculationService } from "./rewardCalculator";
+import { storage } from "./storage";
 
 const app = express();
 app.use(express.json());
@@ -49,6 +54,14 @@ app.use((req, res, next) => {
     }
   }
 
+  // Start reward calculation service
+  try {
+    startRewardCalculationService(storage);
+    log("🚀 Reward calculation service started");
+  } catch (error) {
+    console.error("Failed to start reward calculation service:", error);
+  }
+
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
     const message = err.message || "Internal Server Error";
@@ -73,8 +86,7 @@ app.use((req, res, next) => {
   const port = parseInt(process.env.PORT || '5000', 10);
   server.listen({
     port,
-    host: "0.0.0.0",
-    reusePort: true,
+    host: "localhost",
   }, () => {
     log(`serving on port ${port}`);
   });

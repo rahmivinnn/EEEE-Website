@@ -8,6 +8,7 @@ import Web3Section from "@/components/Web3Section";
 import DeFiSection from "@/components/DeFiSection";
 import NFTSection from "@/components/NFTSection";
 import TokenomicsSection from "@/components/TokenomicsSection";
+import CEXListingSection from "@/components/CEXListingSection";
 import RoadmapSection from "@/components/RoadmapSection";
 import CollaborationsSection from "@/components/CollaborationsSection";
 import Footer from "@/components/Footer";
@@ -52,6 +53,7 @@ export default function Home() {
         <DeFiSection />
         <NFTSection />
         <TokenomicsSection />
+        <CEXListingSection />
         <RoadmapSection />
         <CollaborationsSection />
         <Footer />

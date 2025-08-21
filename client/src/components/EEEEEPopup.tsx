@@ -66,7 +66,7 @@ export default function EEEEEPopup({ children }: EEEEEPopupProps) {
             />
           </div>
           
-          <h2 className="font-anton text-3xl text-white mb-2 tracking-wider">$EEEEE</h2>
+          <h2 className="font-montserrat text-3xl text-white mb-2 tracking-wider font-bold">$EEEEE</h2>
           <p className="text-yellow-300 text-sm">The Loudest Meme on Cardano</p>
           
           <div className="mt-4 flex justify-center gap-4 text-sm">

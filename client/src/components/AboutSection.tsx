@@ -13,7 +13,7 @@ export default function AboutSection() {
       >
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="font-anton text-5xl md:text-7xl uppercase mb-8 tracking-wider">
+            <h2 className="font-montserrat text-5xl md:text-7xl uppercase mb-8 tracking-wider font-black">
               <span className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent">
                 Next-Gen
               </span>

@@ -213,6 +213,95 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  app.put("/api/staking-positions/:id", async (req, res) => {
+    try {
+      const position = await storage.updateStakingPosition(req.params.id, req.body);
+      if (!position) {
+        return res.status(404).json({ message: "Staking position not found" });
+      }
+      res.json(position);
+    } catch (error) {
+      console.error("Error updating staking position:", error);
+      res.status(500).json({ message: "Failed to update staking position" });
+    }
+  });
+
+  // Reward Claim routes
+  app.get("/api/reward-claims/:userId", async (req, res) => {
+    try {
+      const claims = await storage.getRewardClaims(req.params.userId);
+      res.json(claims);
+    } catch (error) {
+      console.error("Error fetching reward claims:", error);
+      res.status(500).json({ message: "Failed to fetch reward claims" });
+    }
+  });
+
+  app.post("/api/reward-claims", async (req, res) => {
+    try {
+      const claim = await storage.createRewardClaim(req.body);
+      res.status(201).json(claim);
+    } catch (error) {
+      console.error("Error creating reward claim:", error);
+      res.status(500).json({ message: "Failed to create reward claim" });
+    }
+  });
+
+  app.get("/api/reward-claims/position/:positionId", async (req, res) => {
+    try {
+      const claims = await storage.getRewardClaimsByPosition(req.params.positionId);
+      res.json(claims);
+    } catch (error) {
+      console.error("Error fetching reward claims by position:", error);
+      res.status(500).json({ message: "Failed to fetch reward claims by position" });
+    }
+  });
+
+  // Staking Snapshot routes
+  app.post("/api/staking-snapshots", async (req, res) => {
+    try {
+      const snapshot = await storage.createStakingSnapshot(req.body);
+      res.status(201).json(snapshot);
+    } catch (error) {
+      console.error("Error creating staking snapshot:", error);
+      res.status(500).json({ message: "Failed to create staking snapshot" });
+    }
+  });
+
+  app.get("/api/staking-snapshots/latest/:positionId", async (req, res) => {
+    try {
+      const snapshot = await storage.getLatestSnapshot(req.params.positionId);
+      if (!snapshot) {
+        return res.status(404).json({ message: "No snapshots found for this position" });
+      }
+      res.json(snapshot);
+    } catch (error) {
+      console.error("Error fetching latest snapshot:", error);
+      res.status(500).json({ message: "Failed to fetch latest snapshot" });
+    }
+  });
+
+  app.get("/api/staking-snapshots/position/:positionId", async (req, res) => {
+    try {
+      const snapshots = await storage.getSnapshotsByPosition(req.params.positionId);
+      res.json(snapshots);
+    } catch (error) {
+      console.error("Error fetching snapshots by position:", error);
+      res.status(500).json({ message: "Failed to fetch snapshots by position" });
+    }
+  });
+
+  // Reward Calculation route
+  app.get("/api/calculate-rewards/:positionId", async (req, res) => {
+    try {
+      const rewards = await storage.calculateRewards(req.params.positionId);
+      res.json({ positionId: req.params.positionId, calculatedRewards: rewards });
+    } catch (error) {
+      console.error("Error calculating rewards:", error);
+      res.status(500).json({ message: "Failed to calculate rewards" });
+    }
+  });
+
   const httpServer = createServer(app);
 
   return httpServer;

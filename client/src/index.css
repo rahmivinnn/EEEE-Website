@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton:wght@400&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -34,8 +34,8 @@
   --dark-purple: hsl(262, 90%, 15%);
   
   /* Font families */
-  --font-anton: 'Anton', sans-serif;
-  --font-inter: 'Inter', sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
 }
 
 .dark {
@@ -162,8 +162,8 @@
   }
   
   .section-fade {
-    opacity: 0;
-    transform: translateY(30px);
+    opacity: 1;
+    transform: translateY(0);
     transition: all 0.8s ease-out;
   }
   
@@ -353,7 +353,7 @@
   }
 
   .text-reveal {
-    opacity: 0;
+    opacity: 1;
     animation: textReveal 0.8s ease-out forwards;
   }
 
@@ -362,22 +362,22 @@
   }
 
   .slide-in-left {
-    opacity: 0;
+    opacity: 1;
     animation: slideInLeft 0.8s ease-out forwards;
   }
 
   .slide-in-right {
-    opacity: 0;
+    opacity: 1;
     animation: slideInRight 0.8s ease-out forwards;
   }
 
   .fade-in-up {
-    opacity: 0;
+    opacity: 1;
     animation: fadeInUp 0.8s ease-out forwards;
   }
 
   .scale-in {
-    opacity: 0;
+    opacity: 1;
     animation: scaleIn 0.6s ease-out forwards;
   }
 

@@ -6,6 +6,8 @@ import {
   tokenPrices,
   cardanoWallets,
   stakingPositions,
+  rewardClaims,
+  stakingSnapshots,
   type StakingPool,
   type InsertStakingPool,
   type NFTCollection,
@@ -20,6 +22,10 @@ import {
   type InsertCardanoWallet,
   type StakingPosition,
   type InsertStakingPosition,
+  type RewardClaim,
+  type InsertRewardClaim,
+  type StakingSnapshot,
+  type InsertStakingSnapshot,
   type User, 
   type InsertUser 
 } from "@shared/schema";
@@ -73,6 +79,22 @@ export interface IStorage {
   getStakingPositions(userId: string): Promise<StakingPosition[]>;
   createStakingPosition(position: InsertStakingPosition): Promise<StakingPosition>;
   updateStakingPosition(id: string, position: Partial<StakingPosition>): Promise<StakingPosition | undefined>;
+  
+  // Reward Claim operations
+  getRewardClaims(userId: string): Promise<RewardClaim[]>;
+  createRewardClaim(claim: InsertRewardClaim): Promise<RewardClaim>;
+  getRewardClaimsByPosition(positionId: string): Promise<RewardClaim[]>;
+  
+  // Staking Snapshot operations
+  createStakingSnapshot(snapshot: InsertStakingSnapshot): Promise<StakingSnapshot>;
+  getLatestSnapshot(positionId: string): Promise<StakingSnapshot | undefined>;
+  getSnapshotsByPosition(positionId: string): Promise<StakingSnapshot[]>;
+  calculateRewards(positionId: string): Promise<number>;
+  
+  // Additional staking operations
+  getAllStakingPositions(): Promise<StakingPosition[]>;
+  getStakingPositionById(positionId: string): Promise<StakingPosition | null>;
+  updateStakingPosition(positionId: string, updates: Partial<StakingPosition>): Promise<StakingPosition>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -265,6 +287,88 @@ export class DatabaseStorage implements IStorage {
       .where(eq(stakingPositions.id, id))
       .returning();
     return updatedPosition || undefined;
+  }
+
+  // Reward Claim operations
+  async getRewardClaims(userId: string): Promise<RewardClaim[]> {
+    return await db.select().from(rewardClaims).where(eq(rewardClaims.userId, userId)).orderBy(desc(rewardClaims.claimedAt));
+  }
+
+  async createRewardClaim(claim: InsertRewardClaim): Promise<RewardClaim> {
+    const [newClaim] = await db.insert(rewardClaims).values({
+      ...claim,
+      id: randomUUID(),
+      claimedAt: new Date()
+    }).returning();
+    return newClaim;
+  }
+
+  async getRewardClaimsByPosition(positionId: string): Promise<RewardClaim[]> {
+    return await db.select().from(rewardClaims).where(eq(rewardClaims.stakingPositionId, positionId)).orderBy(desc(rewardClaims.claimedAt));
+  }
+
+  // Staking Snapshot operations
+  async createStakingSnapshot(snapshot: InsertStakingSnapshot): Promise<StakingSnapshot> {
+    const [newSnapshot] = await db.insert(stakingSnapshots).values({
+      ...snapshot,
+      id: randomUUID(),
+      snapshotDate: new Date()
+    }).returning();
+    return newSnapshot;
+  }
+
+  async getLatestSnapshot(positionId: string): Promise<StakingSnapshot | undefined> {
+    const [snapshot] = await db.select().from(stakingSnapshots)
+      .where(eq(stakingSnapshots.stakingPositionId, positionId))
+      .orderBy(desc(stakingSnapshots.snapshotDate))
+      .limit(1);
+    return snapshot;
+  }
+
+  async getSnapshotsByPosition(positionId: string): Promise<StakingSnapshot[]> {
+    return await db.select().from(stakingSnapshots)
+      .where(eq(stakingSnapshots.stakingPositionId, positionId))
+      .orderBy(desc(stakingSnapshots.snapshotDate));
+  }
+
+  async calculateRewards(positionId: string): Promise<number> {
+    const position = await db.select().from(stakingPositions).where(eq(stakingPositions.id, positionId)).limit(1);
+    if (!position[0]) return 0;
+
+    const { stakedAmount, apy, startDate, lastRewardCalculation } = position[0];
+    const now = new Date();
+    const lastCalc = lastRewardCalculation || startDate;
+    const daysSinceLastCalc = Math.floor((now.getTime() - lastCalc.getTime()) / (1000 * 60 * 60 * 24));
+    
+    if (daysSinceLastCalc <= 0) return 0;
+    
+    // Calculate daily reward based on APY
+    const dailyRate = (apy || 0) / 365 / 100;
+    const reward = parseFloat(stakedAmount) * dailyRate * daysSinceLastCalc;
+    
+    return Math.floor(reward * 1000000) / 1000000; // Round to 6 decimal places
+  }
+
+  async getAllStakingPositions(): Promise<StakingPosition[]> {
+    return await db.select().from(stakingPositions).orderBy(desc(stakingPositions.startDate));
+  }
+
+  async getStakingPositionById(positionId: string): Promise<StakingPosition | null> {
+    const [position] = await db.select().from(stakingPositions).where(eq(stakingPositions.id, positionId));
+    return position || null;
+  }
+  
+  async updateStakingPosition(positionId: string, updates: Partial<StakingPosition>): Promise<StakingPosition> {
+    const [updatedPosition] = await db
+      .update(stakingPositions)
+      .set({
+        ...updates,
+        lastRewardCalculation: updates.lastRewardCalculation || new Date().toISOString()
+      })
+      .where(eq(stakingPositions.id, positionId))
+      .returning();
+    
+    return updatedPosition;
   }
 }
 

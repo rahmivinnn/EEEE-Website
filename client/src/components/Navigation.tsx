@@ -16,7 +16,7 @@ export default function Navigation() {
     <nav className="fixed top-0 w-full z-[100] bg-black/80 backdrop-blur-xl border-b border-zinc-800/50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center h-24">
-          <div className="font-anton text-3xl tracking-wider">
+          <div className="font-montserrat text-3xl tracking-wider font-black">
             <span className="text-white">$</span>
             <span className="bg-gradient-to-r from-violet-400 to-purple-300 bg-clip-text text-transparent">EEEEE</span>
           </div>
@@ -40,6 +40,9 @@ export default function Navigation() {
             </button>
             <button onClick={() => handleNavClick('#tokenomics')} className="text-zinc-300 hover:text-white transition-colors duration-300 font-medium tracking-wide">
               Tokenomics
+            </button>
+            <button onClick={() => handleNavClick('#cex-listing')} className="text-zinc-300 hover:text-white transition-colors duration-300 font-medium tracking-wide">
+              CEX Listing
             </button>
           </div>
           
@@ -95,6 +98,12 @@ export default function Navigation() {
               className="block text-zinc-300 hover:text-white transition-colors font-medium tracking-wide"
             >
               Tokenomics
+            </button>
+            <button 
+              onClick={() => handleNavClick('#cex-listing')} 
+              className="block text-zinc-300 hover:text-white transition-colors font-medium tracking-wide"
+            >
+              CEX Listing
             </button>
           </div>
         </div>

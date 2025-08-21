@@ -33,7 +33,11 @@ export default function NFTSection() {
       rarity: "Legendary",
       supply: "1000",
       description: "The original EEEEE genesis collection with exclusive staking rewards and governance rights.",
-      image: "👑",
+      image: (
+        <svg className="w-16 h-16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="#FFD700"/>
+        </svg>
+      ),
       gradient: "from-violet-500 to-purple-500"
     },
     {
@@ -42,7 +46,11 @@ export default function NFTSection() {
       rarity: "Epic",
       supply: "5000",
       description: "Elite warrior NFTs providing access to premium DeFi features and metaverse experiences.",
-      image: "⚔️",
+      image: (
+        <svg className="w-16 h-16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M6.92 5H5L6.5 2.5H8.5L10 5H8.08L9 8H15L15.92 5H14L15.5 2.5H17.5L19 5H17.08L18 8V9C18 10.1 17.1 11 16 11H15L16 21H8L9 11H8C6.9 11 6 10.1 6 9V8L6.92 5Z" fill="#C0392B"/>
+        </svg>
+      ),
       gradient: "from-red-500 to-orange-500"
     },
     {
@@ -51,7 +59,11 @@ export default function NFTSection() {
       rarity: "Rare",
       supply: "10000",
       description: "Community builder collection with voting power and exclusive development insights.",
-      image: "🔨",
+      image: (
+        <svg className="w-16 h-16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M13.78 15.3L19.78 21.3L21.89 19.14L15.89 13.14L13.78 15.3M17.5 10.1C17.11 10.1 16.69 10.05 16.36 9.91L4.97 21.25L2.86 19.14L10.27 11.74C8.5 10.3 8.5 7.7 10.27 6.26C12.04 4.82 14.96 4.82 16.73 6.26C18.5 7.7 18.5 10.3 16.73 11.74C16.4 11.88 16.03 10.1 17.5 10.1Z" fill="#3498DB"/>
+        </svg>
+      ),
       gradient: "from-blue-500 to-cyan-500"
     }
   ];
@@ -64,7 +76,11 @@ export default function NFTSection() {
         rarity: "Legendary",
         supply: "1000",
         description: "The original EEEEE genesis collection with exclusive staking rewards and governance rights.",
-        image: "👑",
+        image: (
+          <svg className="w-16 h-16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="#FFD700"/>
+          </svg>
+        ),
         gradient: "from-violet-500 to-purple-500"
       }
     ];
@@ -79,7 +95,7 @@ export default function NFTSection() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className={`text-center mb-20 section-fade ${isInView ? 'in-view' : ''}`}>
-          <h2 className="font-anton text-5xl lg:text-6xl uppercase mb-6 tracking-wider">
+          <h2 className="font-montserrat text-5xl lg:text-6xl uppercase mb-6 tracking-wider font-black">
             <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
               NFT ECOSYSTEM
             </span>
@@ -96,8 +112,16 @@ export default function NFTSection() {
             <div className="grid lg:grid-cols-2">
               {/* NFT Display */}
               <div className="p-8 lg:p-12">
-                <div className={`aspect-square bg-gradient-to-br ${nftCollections[selectedNFT].gradient} rounded-2xl flex items-center justify-center mb-6 relative overflow-hidden`}>
-                  <div className="text-8xl">{nftCollections[selectedNFT].image}</div>
+                <div className={`aspect-square bg-gradient-to-br ${nftCollections?.[selectedNFT]?.gradient || 'from-violet-500 to-purple-500'} rounded-2xl flex items-center justify-center mb-6 relative overflow-hidden`}>
+                  <div className="text-white scale-[2]">{nftCollections?.[selectedNFT]?.image || (
+                    <svg className="w-16 h-16" viewBox="0 0 100 100" fill="none">
+                      <circle cx="50" cy="50" r="45" fill="#8B5CF6" stroke="#FFD700" strokeWidth="4"/>
+                      <text x="50" y="35" textAnchor="middle" fill="#FFD700" fontSize="14" fontWeight="bold">EEEEE</text>
+                      <text x="50" y="55" textAnchor="middle" fill="#FFFFFF" fontSize="10">COIN</text>
+                      <circle cx="50" cy="70" r="8" fill="#FFD700"/>
+                      <text x="50" y="75" textAnchor="middle" fill="#8B5CF6" fontSize="8" fontWeight="bold">E</text>
+                    </svg>
+                  )}</div>
                   <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
                   <div className="absolute top-4 right-4 px-3 py-1 bg-black/50 rounded-full text-sm font-bold text-white">
                     #{String(selectedNFT + 1).padStart(4, '0')}
@@ -105,18 +129,18 @@ export default function NFTSection() {
                 </div>
                 
                 <div className="text-center">
-                  <h3 className="text-3xl font-bold text-white mb-2">{nftCollections[selectedNFT].name}</h3>
-                  <div className="flex justify-center items-center gap-4 mb-4">
-                    <span className={`px-3 py-1 rounded-full text-sm font-bold ${
-                      nftCollections[selectedNFT].rarity === 'Legendary' ? 'bg-yellow-500/20 text-yellow-400' :
-                      nftCollections[selectedNFT].rarity === 'Epic' ? 'bg-purple-500/20 text-purple-400' :
-                      'bg-blue-500/20 text-blue-400'
-                    }`}>
-                      {nftCollections[selectedNFT].rarity}
-                    </span>
-                    <span className="text-2xl font-bold text-emerald-400">{nftCollections[selectedNFT].price}</span>
-                  </div>
-                  <p className="text-zinc-400 leading-relaxed">{nftCollections[selectedNFT].description}</p>
+                  <h3 className="text-3xl font-bold text-white mb-2">{nftCollections?.[selectedNFT]?.name || 'EEEEE Genesis'}</h3>
+                <div className="flex items-center gap-3 mb-4">
+                  <span className={`px-3 py-1 rounded-full text-sm font-bold ${
+                    nftCollections?.[selectedNFT]?.rarity === 'Legendary' ? 'bg-yellow-500/20 text-yellow-400' :
+                    nftCollections?.[selectedNFT]?.rarity === 'Epic' ? 'bg-purple-500/20 text-purple-400' :
+                    'bg-blue-500/20 text-blue-400'
+                  }`}>
+                    {nftCollections?.[selectedNFT]?.rarity || 'Legendary'}
+                  </span>
+                  <span className="text-2xl font-bold text-emerald-400">{nftCollections?.[selectedNFT]?.price || '127.5 ADA'}</span>
+                </div>
+                <p className="text-zinc-400 leading-relaxed">{nftCollections?.[selectedNFT]?.description || 'The original EEEEE genesis collection with exclusive staking rewards and governance rights.'}</p>
                 </div>
               </div>
 
@@ -127,7 +151,7 @@ export default function NFTSection() {
                     <h4 className="text-xl font-bold text-white mb-4">Collection Details</h4>
                     <div className="grid grid-cols-2 gap-4">
                       <div className="bg-zinc-800/50 rounded-xl p-4">
-                        <div className="text-2xl font-bold text-violet-400">{nftCollections[selectedNFT].supply}</div>
+                        <div className="text-2xl font-bold text-violet-400">{nftCollections?.[selectedNFT]?.supply || '1000'}</div>
                         <div className="text-sm text-zinc-400">Total Supply</div>
                       </div>
                       <div className="bg-zinc-800/50 rounded-xl p-4">
@@ -198,7 +222,7 @@ export default function NFTSection() {
                 onClick={() => setSelectedNFT(index)}
               >
                 <div className={`w-full aspect-square bg-gradient-to-br ${collection.gradient} rounded-xl flex items-center justify-center mb-4 relative overflow-hidden`}>
-                  <div className="text-4xl">{collection.image}</div>
+                  <div className="text-white">{collection.image}</div>
                   <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
                 </div>
                 

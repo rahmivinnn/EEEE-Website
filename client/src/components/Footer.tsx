@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="bg-black border-t border-zinc-800 py-16">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
-          <h3 className="font-anton text-4xl mb-12 tracking-wider">
+          <h3 className="font-montserrat text-4xl mb-12 tracking-wider font-bold">
             <span className="text-white">$</span>
             <span className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent">EEEEE</span>
           </h3>

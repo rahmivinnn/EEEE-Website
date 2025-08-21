@@ -27,11 +27,11 @@ export default function DeFiSection() {
   // Process data with proper error handling
   let liquidityPools;
   try {
-    liquidityPools = liquidityPoolsData && Array.isArray(liquidityPoolsData) ? liquidityPoolsData.slice(0, 3).map((pool: any) => ({
+    liquidityPools = liquidityPoolsData && Array.isArray(liquidityPoolsData) ? liquidityPoolsData.slice(0, 3).filter((pool: any) => pool && pool.tokenA && pool.tokenB).map((pool: any) => ({
     pair: `${pool.tokenA}/${pool.tokenB}`,
-    tvl: pool.tvl,
-    apr: pool.apr,
-    volume24h: pool.volume24h,
+    tvl: pool.tvl || "$0",
+    apr: pool.apr || "0%",
+    volume24h: pool.volume24h || "$0",
     fees24h: pool.fees || pool.fee || "0.3%",
     gradient: pool.tokenA === 'EEEEE' && pool.tokenB === 'ADA' ? "from-violet-500 to-purple-500" :
               pool.tokenA === 'EEEEE' && pool.tokenB === 'USDC' ? "from-emerald-500 to-cyan-500" :
@@ -154,7 +154,7 @@ export default function DeFiSection() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className={`text-center mb-20 section-fade ${isInView ? 'in-view' : ''}`}>
-          <h2 className="font-anton text-5xl lg:text-6xl uppercase mb-6 tracking-wider">
+          <h2 className="font-montserrat text-5xl lg:text-6xl uppercase mb-6 tracking-wider font-black">
             <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
               DEFI PROTOCOL
             </span>
@@ -302,24 +302,24 @@ export default function DeFiSection() {
             <div className="grid lg:grid-cols-2 gap-8">
               <div>
                 <h4 className="text-2xl font-bold text-white mb-6">
-                  {liquidityPools[activePool].pair} Pool Details
+                  {liquidityPools[activePool]?.pair || "Pool"} Pool Details
                 </h4>
                 <div className="space-y-4">
                   <div className="flex justify-between py-2 border-b border-zinc-700">
                     <span className="text-zinc-400">Total Value Locked</span>
-                    <span className="font-bold text-white">{liquidityPools[activePool].tvl}</span>
+                    <span className="font-bold text-white">{liquidityPools[activePool]?.tvl || "$0"}</span>
                   </div>
                   <div className="flex justify-between py-2 border-b border-zinc-700">
                     <span className="text-zinc-400">Annual Percentage Rate</span>
-                    <span className="font-bold text-emerald-400">{liquidityPools[activePool].apr}</span>
+                    <span className="font-bold text-emerald-400">{liquidityPools[activePool]?.apr || "0%"}</span>
                   </div>
                   <div className="flex justify-between py-2 border-b border-zinc-700">
                     <span className="text-zinc-400">24H Trading Volume</span>
-                    <span className="font-bold text-white">{liquidityPools[activePool].volume24h}</span>
+                    <span className="font-bold text-white">{liquidityPools[activePool]?.volume24h || "$0"}</span>
                   </div>
                   <div className="flex justify-between py-2">
                     <span className="text-zinc-400">24H Fees Earned</span>
-                    <span className="font-bold text-cyan-400">{liquidityPools[activePool].fees24h}</span>
+                    <span className="font-bold text-cyan-400">{liquidityPools[activePool]?.fees24h || "0.3%"}</span>
                   </div>
                 </div>
               </div>

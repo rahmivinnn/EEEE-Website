@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { Wallet, ExternalLink, Copy, CheckCircle, AlertCircle } from 'lucide-react';
+import { ExternalLink, Copy, CheckCircle, AlertCircle } from 'lucide-react';
 import { useCardanoWallet } from '@/hooks/useCardanoWallet';
 import { useToast } from '@/hooks/use-toast';
+import { EternlLogo } from '@/components/CardanoLogos';
 
 export default function WalletConnect() {
   const [showWallets, setShowWallets] = useState(false);
@@ -38,7 +39,13 @@ export default function WalletConnect() {
       <div className="bg-gradient-to-br from-zinc-900/90 to-black/90 backdrop-blur-xl border border-zinc-800 rounded-2xl p-6">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
-            <div className="text-2xl">{wallet.icon}</div>
+            <div className="w-8 h-8 flex items-center justify-center">
+              {typeof wallet.icon === 'string' ? (
+                <div className="text-2xl">{wallet.icon}</div>
+              ) : (
+                <wallet.icon className="w-8 h-8" />
+              )}
+            </div>
             <div>
               <h3 className="font-semibold text-white">{wallet.name}</h3>
               <div className="flex items-center gap-2 text-sm text-zinc-400">
@@ -88,7 +95,9 @@ export default function WalletConnect() {
   return (
     <div className="bg-gradient-to-br from-zinc-900/90 to-black/90 backdrop-blur-xl border border-zinc-800 rounded-2xl p-6">
       <div className="text-center mb-6">
-        <Wallet className="w-12 h-12 text-violet-400 mx-auto mb-3" />
+        <div className="w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+          <EternlLogo className="w-12 h-12" />
+        </div>
         <h3 className="text-xl font-semibold text-white mb-2">Connect Cardano Wallet</h3>
         <p className="text-zinc-400 text-sm">
           Connect your Cardano wallet to view real balance and make transactions
@@ -131,7 +140,13 @@ export default function WalletConnect() {
                 disabled={loading}
                 className="w-full p-3 bg-zinc-800/50 hover:bg-zinc-800/70 border border-zinc-700 rounded-lg transition-colors flex items-center gap-3 disabled:opacity-50"
               >
-                <div className="text-2xl">{walletInfo.icon}</div>
+                <div className="w-8 h-8 flex items-center justify-center">
+                  {typeof walletInfo.icon === 'string' ? (
+                    <div className="text-2xl">{walletInfo.icon}</div>
+                  ) : (
+                    <walletInfo.icon className="w-8 h-8" />
+                  )}
+                </div>
                 <span className="text-white font-medium">{walletInfo.name}</span>
               </button>
             ))

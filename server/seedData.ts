@@ -50,7 +50,7 @@ export async function seedDatabase() {
         supply: "1000",
         minted: "847",
         description: "The first and most exclusive EEEEE NFT collection with utility access to premium features",
-        imageUrl: "🔥",
+        imageUrl: "<svg className='w-16 h-16' viewBox='0 0 100 100' fill='none'><circle cx='50' cy='50' r='45' fill='#8B5CF6' stroke='#FFD700' strokeWidth='4'/><text x='50' y='35' textAnchor='middle' fill='#FFD700' fontSize='14' fontWeight='bold'>EEEEE</text><text x='50' y='55' textAnchor='middle' fill='#FFFFFF' fontSize='10'>COIN</text><circle cx='50' cy='70' r='8' fill='#FFD700'/><text x='50' y='75' textAnchor='middle' fill='#8B5CF6' fontSize='8' fontWeight='bold'>E</text></svg>",
         utilities: ["Governance Voting Rights", "Exclusive Staking Pools", "Metaverse Access", "Premium Support"],
         gradient: "from-violet-500 to-purple-500"
       },
@@ -61,7 +61,7 @@ export async function seedDatabase() {
         supply: "5000",
         minted: "3247",
         description: "Battle-ready EEEEE characters with staking rewards and governance rights",
-        imageUrl: "⚔️",
+        imageUrl: "<svg className='w-16 h-16' viewBox='0 0 100 100' fill='none'><circle cx='50' cy='50' r='45' fill='#8B5CF6' stroke='#FFD700' strokeWidth='4'/><text x='50' y='35' textAnchor='middle' fill='#FFD700' fontSize='14' fontWeight='bold'>EEEEE</text><text x='50' y='55' textAnchor='middle' fill='#FFFFFF' fontSize='10'>COIN</text><circle cx='50' cy='70' r='8' fill='#FFD700'/><text x='50' y='75' textAnchor='middle' fill='#8B5CF6' fontSize='8' fontWeight='bold'>E</text></svg>",
         utilities: ["Staking Rewards Boost", "Governance Rights", "Trading Benefits", "Community Access"],
         gradient: "from-emerald-500 to-cyan-500"
       },
@@ -72,7 +72,7 @@ export async function seedDatabase() {
         supply: "10000",
         minted: "6891",
         description: "Collectible land plots in the EEEEE metaverse with passive income generation",
-        imageUrl: "🏰",
+        imageUrl: "<svg className='w-16 h-16' viewBox='0 0 100 100' fill='none'><circle cx='50' cy='50' r='45' fill='#8B5CF6' stroke='#FFD700' strokeWidth='4'/><text x='50' y='35' textAnchor='middle' fill='#FFD700' fontSize='14' fontWeight='bold'>EEEEE</text><text x='50' y='55' textAnchor='middle' fill='#FFFFFF' fontSize='10'>COIN</text><circle cx='50' cy='70' r='8' fill='#FFD700'/><text x='50' y='75' textAnchor='middle' fill='#8B5CF6' fontSize='8' fontWeight='bold'>E</text></svg>",
         utilities: ["Passive Income", "Land Development", "Resource Mining", "Territory Control"],
         gradient: "from-blue-500 to-indigo-500"
       }

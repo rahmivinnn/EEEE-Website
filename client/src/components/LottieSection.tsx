@@ -13,7 +13,7 @@ export default function LottieSection() {
         ref={ref}
         className={`relative z-10 max-w-7xl mx-auto text-center section-fade ${isInView ? 'in-view' : ''}`}
       >
-        <h2 className="font-anton text-5xl md:text-7xl uppercase mb-8 tracking-wider">
+        <h2 className="font-montserrat text-5xl md:text-7xl uppercase mb-8 tracking-wider font-black">
           <span className="text-white">Interactive</span>
           <br />
           <span className="bg-gradient-to-r from-purple-400 to-yellow-400 bg-clip-text text-transparent">Experience</span>

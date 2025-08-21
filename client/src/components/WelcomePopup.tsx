@@ -56,7 +56,7 @@ export default function WelcomePopup() {
 
         {/* Welcome message */}
         <div className="text-center mb-6">
-          <h2 className="font-anton text-2xl uppercase mb-3 bg-gradient-to-r from-purple-400 to-yellow-400 bg-clip-text text-transparent">
+          <h2 className="font-montserrat text-2xl uppercase mb-3 bg-gradient-to-r from-purple-400 to-yellow-400 bg-clip-text text-transparent font-bold">
             Welcome to $EEEEE!
           </h2>
           <p className="text-zinc-300 leading-relaxed text-sm">

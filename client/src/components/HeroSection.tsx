@@ -16,7 +16,7 @@ export default function HeroSection() {
         className={`relative z-10 text-center max-w-6xl mx-auto section-fade ${isInView ? 'in-view' : ''}`}
       >
         <div className="mb-8">
-          <h1 className="font-anton text-6xl md:text-8xl lg:text-9xl uppercase mb-6 tracking-wider">
+          <h1 className="font-montserrat text-6xl md:text-8xl lg:text-9xl uppercase mb-6 tracking-wider font-black">
             <span className="block bg-gradient-to-r from-white via-violet-200 to-purple-300 bg-clip-text text-transparent">
               Welcome to
             </span>

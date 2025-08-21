@@ -10,7 +10,7 @@ export default function WhySection() {
         className={`max-w-7xl mx-auto section-fade ${isInView ? 'in-view' : ''}`}
       >
         <div className="text-center mb-20">
-          <h2 className="font-anton text-5xl md:text-7xl uppercase mb-8 tracking-wider">
+          <h2 className="font-montserrat text-5xl md:text-7xl uppercase mb-8 tracking-wider font-black">
             <span className="text-white">Enterprise</span>
             <br />
             <span className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent">Ecosystem</span>

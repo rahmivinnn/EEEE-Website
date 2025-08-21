@@ -2,12 +2,16 @@ import { useState, useEffect } from "react";
 // Using real SVG icons instead of AI-generated ones
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useQuery } from "@tanstack/react-query";
+import { useCardanoWallet } from "@/hooks/useCardanoWallet";
+import { EternlLogo } from "@/components/CardanoLogos";
+import WalletConnect from "@/components/WalletConnect";
 import EEEEEPopup from "@/components/EEEEEPopup";
+import StakingInterface from "@/components/StakingInterface";
 
 export default function Web3Section() {
   const { ref, isInView } = useScrollAnimation();
-  const [walletConnected, setWalletConnected] = useState(false);
-  const [stakingAmount, setStakingAmount] = useState("");
+
+  const { connected: walletConnected, wallet, balance } = useCardanoWallet();
 
   // Fetch real staking pools and token prices from database
   const { data: stakingPools } = useQuery({
@@ -36,23 +40,16 @@ export default function Web3Section() {
     { name: "Loading...", ticker: "...", apy: "0%" }
   ];
 
-  const connectWallet = () => {
-    setWalletConnected(!walletConnected);
-  };
 
-  const handleStaking = () => {
-    if (stakingAmount) {
-      alert(`Staking ${stakingAmount} $EEEEE tokens initiated!`);
-      setStakingAmount("");
-    }
-  };
+
+
 
   return (
     <section id="web3" className="pt-40 pb-32 px-6 lg:px-8 relative" ref={ref}>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className={`text-center mb-20 section-fade ${isInView ? 'in-view' : ''}`}>
-          <h2 className="font-anton text-5xl lg:text-6xl uppercase mb-6 tracking-wider">
+          <h2 className="font-montserrat text-5xl lg:text-6xl uppercase mb-6 tracking-wider font-black">
             <span className="bg-gradient-to-r from-purple-400 via-violet-400 to-yellow-400 bg-clip-text text-transparent">
               WEB3 ECOSYSTEM
             </span>
@@ -118,88 +115,16 @@ export default function Web3Section() {
           <div className="bg-gradient-to-br from-zinc-900/90 to-black/90 backdrop-blur-xl border border-zinc-800 rounded-3xl p-8">
             <div className="flex items-center gap-4 mb-6">
               <div className="p-3 bg-gradient-to-br from-purple-500 to-yellow-600 rounded-xl">
-                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M21,18V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5A2,2 0 0,1 5,3H19A2,2 0 0,1 21,5V6H12A2,2 0 0,0 10,8V16A2,2 0 0,0 12,18M12,16H22V8H12M16,13.5A1.5,1.5 0 0,1 14.5,12A1.5,1.5 0 0,1 16,10.5A1.5,1.5 0 0,1 17.5,12A1.5,1.5 0 0,1 16,13.5Z"/>
-                </svg>
+                <EternlLogo className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-white tracking-wide">CARDANO WALLET</h3>
             </div>
             
-            {!walletConnected ? (
-              <div className="space-y-4">
-                <p className="text-zinc-400 mb-6">
-                  Connect your Cardano wallet to access premium features and start earning rewards.
-                </p>
-                <button
-                  onClick={connectWallet}
-                  className="w-full py-4 bg-gradient-to-r from-purple-600 to-yellow-600 rounded-xl font-bold text-lg tracking-wide hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/25"
-                >
-                  CONNECT WALLET
-                </button>
-              </div>
-            ) : (
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 p-4 bg-gradient-to-r from-yellow-500/20 to-purple-500/20 rounded-xl border border-yellow-500/30">
-                  <div className="w-3 h-3 bg-yellow-500 rounded-full animate-pulse"></div>
-                  <span className="text-yellow-400 font-bold">WALLET CONNECTED</span>
-                </div>
-                <div className="text-zinc-400">
-                  <div className="mb-2"><strong>Address:</strong> addr1qx...7k9m</div>
-                  <div className="mb-2"><strong>Balance:</strong> 1,245,890 $EEEEE</div>
-                  <div><strong>Staked:</strong> 500,000 $EEEEE</div>
-                </div>
-                <button
-                  onClick={connectWallet}
-                  className="w-full py-3 bg-zinc-800 hover:bg-zinc-700 rounded-xl font-medium transition-colors"
-                >
-                  DISCONNECT
-                </button>
-              </div>
-            )}
+            <WalletConnect />
           </div>
 
           {/* Staking Interface */}
-          <div className="bg-gradient-to-br from-zinc-900/90 to-black/90 backdrop-blur-xl border border-zinc-800 rounded-3xl p-8">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="p-3 bg-gradient-to-br from-yellow-500 to-purple-600 rounded-xl">
-                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.6 14.8,10V11.5C15.4,11.5 16,12.1 16,12.7V16.2C16,16.8 15.4,17.3 14.8,17.3H9.2C8.6,17.3 8,16.8 8,16.2V12.7C8,12.1 8.6,11.5 9.2,11.5V10C9.2,8.6 10.6,7 12,7M12,8.2C11.2,8.2 10.5,8.7 10.5,10V11.5H13.5V10C13.5,8.7 12.8,8.2 12,8.2Z"/>
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-white tracking-wide">STAKING POOL</h3>
-            </div>
-            
-            <div className="space-y-6">
-              <div className="grid grid-cols-2 gap-4 text-center">
-                <div className="p-3 bg-gradient-to-br from-purple-500/10 to-yellow-500/10 rounded-xl">
-                  <div className="text-2xl font-bold text-purple-400">24.7%</div>
-                  <div className="text-xs text-zinc-400">APY</div>
-                </div>
-                <div className="p-3 bg-gradient-to-br from-yellow-500/10 to-purple-500/10 rounded-xl">
-                  <div className="text-2xl font-bold text-yellow-400">847K</div>
-                  <div className="text-xs text-zinc-400">STAKERS</div>
-                </div>
-              </div>
-              
-              <div className="space-y-3">
-                <label className="block text-sm font-medium text-zinc-400">AMOUNT TO STAKE</label>
-                <input
-                  type="number"
-                  value={stakingAmount}
-                  onChange={(e) => setStakingAmount(e.target.value)}
-                  placeholder="Enter amount..."
-                  className="w-full px-4 py-3 bg-zinc-800 border border-zinc-700 rounded-xl text-white focus:border-purple-500 focus:outline-none transition-colors"
-                />
-                <button
-                  onClick={handleStaking}
-                  disabled={!stakingAmount || !walletConnected}
-                  className="w-full py-3 bg-gradient-to-r from-yellow-600 to-purple-600 rounded-xl font-bold tracking-wide hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
-                >
-                  {walletConnected ? 'STAKE NOW' : 'CONNECT WALLET FIRST'}
-                </button>
-              </div>
-            </div>
-          </div>
+          <StakingInterface />
         </div>
 
         {/* Web3 Features Grid */}

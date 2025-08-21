@@ -67,11 +67,11 @@ export default {
         "deep-purple": "var(--deep-purple)",
       },
       fontFamily: {
-        sans: ["var(--font-inter)"],
+        sans: ["var(--font-roboto)"],
         serif: ["var(--font-serif)"],
         mono: ["var(--font-mono)"],
-        anton: ["var(--font-anton)"],
-        inter: ["var(--font-inter)"],
+        montserrat: ["var(--font-montserrat)"],
+        roboto: ["var(--font-roboto)"],
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
