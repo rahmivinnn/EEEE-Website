@@ -5,11 +5,7 @@
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "framework": null,
-  "functions": {
-    "dist/index.js": {
-      "runtime": "nodejs20.x"
-    }
-  },
+
   "routes": [
     {
       "src": "/api/(.*)",
