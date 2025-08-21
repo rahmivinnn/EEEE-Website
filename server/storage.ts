@@ -357,19 +357,6 @@ export class DatabaseStorage implements IStorage {
     const [position] = await db.select().from(stakingPositions).where(eq(stakingPositions.id, positionId));
     return position || null;
   }
-  
-  async updateStakingPosition(positionId: string, updates: Partial<StakingPosition>): Promise<StakingPosition> {
-    const [updatedPosition] = await db
-      .update(stakingPositions)
-      .set({
-        ...updates,
-        lastRewardCalculation: updates.lastRewardCalculation || new Date().toISOString()
-      })
-      .where(eq(stakingPositions.id, positionId))
-      .returning();
-    
-    return updatedPosition;
-  }
 }
 
 export const storage = new DatabaseStorage();
