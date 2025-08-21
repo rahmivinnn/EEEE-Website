@@ -49,25 +49,25 @@ export const CardanoLogo = ({ className = "w-6 h-6" }: { className?: string }) =
   </svg>
 );
 
-// Lace Wallet Logo - Official Design
+// Lace Wallet Logo - Blue Design
 export const LaceLogo = ({ className = "w-6 h-6" }: { className?: string }) => (
   <svg className={className} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
     {/* Lace Logo Background */}
-    <rect width="100" height="100" rx="20" fill="#6366F1"/>
-    
+    <rect width="100" height="100" rx="20" fill="#3b82f6"/>
+
     {/* Lace Symbol - Geometric Pattern */}
     <g fill="white">
       {/* Main geometric shape */}
       <path d="M25 35 L50 20 L75 35 L75 50 L50 65 L25 50 Z" fillOpacity="0.9"/>
-      
+
       {/* Inner pattern */}
-      <path d="M35 40 L50 30 L65 40 L65 50 L50 60 L35 50 Z" fill="#6366F1"/>
-      
+      <path d="M35 40 L50 30 L65 40 L65 50 L50 60 L35 50 Z" fill="#3b82f6"/>
+
       {/* Center accent */}
       <circle cx="50" cy="45" r="8" fill="white"/>
-      <circle cx="50" cy="45" r="4" fill="#6366F1"/>
+      <circle cx="50" cy="45" r="4" fill="#3b82f6"/>
     </g>
-    
+
     {/* Lace text indicator */}
     <text x="50" y="85" textAnchor="middle" fill="white" fontSize="12" fontFamily="Arial, sans-serif" fontWeight="600">LACE</text>
   </svg>
