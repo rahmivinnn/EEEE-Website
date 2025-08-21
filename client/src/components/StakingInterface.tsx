@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useCardanoWallet } from '@/hooks/useCardanoWallet';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { useToast } from '@/hooks/use-toast';
 
 interface LockPeriodOption {
   id: 'flexible' | '30' | '90';
@@ -54,6 +55,7 @@ const lockPeriodOptions: LockPeriodOption[] = [
 export default function StakingInterface() {
   const { connected, address, balance, stakeTokens, claimRewards, unstakeTokens } = useCardanoWallet();
   const queryClient = useQueryClient();
+  const { toast } = useToast();
   
   const [stakingAmount, setStakingAmount] = useState('');
   const [selectedLockPeriod, setSelectedLockPeriod] = useState<'flexible' | '30' | '90'>('flexible');
@@ -106,13 +108,21 @@ export default function StakingInterface() {
     },
     onSuccess: (data) => {
       console.log('✅ Staking successful:', data);
+      toast({
+        title: "Staking Successful!",
+        description: `Successfully staked ${stakingAmount} EEEEE tokens`,
+      });
       queryClient.invalidateQueries({ queryKey: [`/api/staking-positions/${address}`] });
       setStakingAmount('');
       setIsStaking(false);
     },
     onError: (error) => {
       console.error('❌ Staking failed:', error);
-      alert(`Staking failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
+      toast({
+        title: "Staking Failed",
+        description: error instanceof Error ? error.message : 'Unknown error occurred',
+        variant: "destructive",
+      });
       setIsStaking(false);
     }
   });
@@ -149,8 +159,20 @@ export default function StakingInterface() {
   });
 
   const handleStake = async () => {
-    if (!stakingAmount || !connected) {
-      console.log('❌ Cannot stake: missing amount or wallet not connected');
+    console.log('🔍 Stake button clicked - Debug info:', {
+      stakingAmount,
+      connected,
+      address,
+      balance
+    });
+
+    if (!connected) {
+      console.log('❌ Wallet not connected');
+      return;
+    }
+
+    if (!stakingAmount) {
+      console.log('❌ No staking amount entered');
       return;
     }
 
@@ -177,10 +199,19 @@ export default function StakingInterface() {
   };
 
   const selectedOption = lockPeriodOptions.find(opt => opt.id === selectedLockPeriod)!;
-  const estimatedDailyReward = stakingAmount ? 
+  const estimatedDailyReward = stakingAmount ?
     (parseFloat(stakingAmount) * selectedOption.apy / 365 / 100).toFixed(6) : '0';
-  const estimatedMonthlyReward = stakingAmount ? 
+  const estimatedMonthlyReward = stakingAmount ?
     (parseFloat(stakingAmount) * selectedOption.apy / 12 / 100).toFixed(6) : '0';
+
+  // Debug wallet connection state
+  console.log('🔍 StakingInterface Debug:', {
+    connected,
+    address,
+    balance,
+    stakingAmount,
+    isStaking
+  });
 
   return (
     <div className="bg-gradient-to-br from-zinc-900/90 to-black/90 backdrop-blur-xl border border-zinc-800 rounded-3xl p-8">
@@ -261,10 +292,13 @@ export default function StakingInterface() {
       <div className="space-y-3">
         <button
           onClick={handleStake}
-          disabled={!stakingAmount || !connected || isStaking}
+          disabled={!connected || !stakingAmount || isStaking}
           className="w-full py-3 bg-gradient-to-r from-yellow-600 to-purple-600 rounded-xl font-bold tracking-wide hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
         >
-          {isStaking ? 'STAKING...' : connected ? 'STAKE NOW' : 'CONNECT WALLET FIRST'}
+          {isStaking ? 'STAKING...' :
+           !connected ? 'CONNECT WALLET FIRST' :
+           !stakingAmount ? 'ENTER AMOUNT' :
+           'STAKE NOW'}
         </button>
         
         {totalClaimableRewards > 0 && (

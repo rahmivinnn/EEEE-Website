@@ -158,12 +158,23 @@ export function useCardanoWallet() {
   // Auto-reconnect on page load
   useEffect(() => {
     const savedWallet = localStorage.getItem('connectedWallet');
+    console.log('🔄 Auto-reconnect check:', { savedWallet });
+
     if (savedWallet) {
-      const availableWallets = getAvailableWallets();
-      const wallet = availableWallets.find(w => w.name === savedWallet);
-      if (wallet) {
-        connectWallet(wallet);
-      }
+      // Wait a bit for wallet extensions to load
+      setTimeout(() => {
+        const availableWallets = getAvailableWallets();
+        console.log('🔍 Available wallets:', availableWallets.map(w => w.name));
+
+        const wallet = availableWallets.find(w => w.name === savedWallet);
+        if (wallet) {
+          console.log('🔗 Auto-reconnecting to:', wallet.name);
+          connectWallet(wallet);
+        } else {
+          console.log('❌ Saved wallet not found, clearing localStorage');
+          localStorage.removeItem('connectedWallet');
+        }
+      }, 1000);
     }
   }, []);
 

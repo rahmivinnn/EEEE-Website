@@ -29,29 +29,40 @@ export const getQueryFn: <T>(options: {
 }) => QueryFunction<T> =
   ({ on401: unauthorizedBehavior }) =>
   async ({ queryKey }) => {
-    const res = await fetch(queryKey.join("/") as string, {
-      credentials: "include",
-    });
+    try {
+      console.log('🌐 Fetching:', queryKey.join("/"));
 
-    if (unauthorizedBehavior === "returnNull" && res.status === 401) {
-      return null;
+      const res = await fetch(queryKey.join("/") as string, {
+        credentials: "include",
+      });
+
+      if (unauthorizedBehavior === "returnNull" && res.status === 401) {
+        return null;
+      }
+
+      await throwIfResNotOk(res);
+      const data = await res.json();
+
+      console.log('✅ Fetch success:', queryKey.join("/"), data);
+      return data;
+    } catch (error) {
+      console.error('❌ Fetch error:', queryKey.join("/"), error);
+      throw error;
     }
-
-    await throwIfResNotOk(res);
-    return await res.json();
   };
 
 export const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       queryFn: getQueryFn({ on401: "throw" }),
-      refetchInterval: false,
-      refetchOnWindowFocus: false,
-      staleTime: Infinity,
-      retry: false,
+      refetchInterval: 30000, // Refresh every 30 seconds for live data
+      refetchOnWindowFocus: true,
+      staleTime: 10000, // Data is fresh for 10 seconds
+      retry: 3, // Retry failed requests 3 times
+      retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
     },
     mutations: {
-      retry: false,
+      retry: 1, // Retry mutations once
     },
   },
 });

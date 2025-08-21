@@ -3,6 +3,7 @@ import { Image, Crown, Star, Zap, Shield, Sparkles } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useQuery } from "@tanstack/react-query";
 import EEEEEPopup from "@/components/EEEEEPopup";
+import { EEEEEGenesisIcon, EEEEEWarriorIcon, EEEEEBuilderIcon } from "@/components/EEEEECoinIcon";
 
 export default function NFTSection() {
   const { ref, isInView } = useScrollAnimation();
@@ -33,15 +34,7 @@ export default function NFTSection() {
       rarity: "Legendary",
       supply: "1000",
       description: "The original EEEEE genesis collection with exclusive staking rewards and governance rights.",
-      image: (
-        <svg className="w-16 h-16" viewBox="0 0 100 100" fill="none">
-          <circle cx="50" cy="50" r="45" fill="#FFD700" stroke="#8B5CF6" strokeWidth="3"/>
-          <text x="50" y="35" textAnchor="middle" fill="#8B5CF6" fontSize="14" fontWeight="bold">EEEEE</text>
-          <text x="50" y="55" textAnchor="middle" fill="#FFFFFF" fontSize="10">GENESIS</text>
-          <circle cx="50" cy="70" r="8" fill="#8B5CF6"/>
-          <text x="50" y="75" textAnchor="middle" fill="#FFD700" fontSize="8" fontWeight="bold">G</text>
-        </svg>
-      ),
+      image: <EEEEEGenesisIcon size={80} />,
       gradient: "from-violet-500 to-purple-500"
     },
     {
@@ -50,15 +43,7 @@ export default function NFTSection() {
       rarity: "Epic",
       supply: "5000",
       description: "Elite warrior NFTs providing access to premium DeFi features and metaverse experiences.",
-      image: (
-        <svg className="w-16 h-16" viewBox="0 0 100 100" fill="none">
-          <circle cx="50" cy="50" r="45" fill="#C0392B" stroke="#FFD700" strokeWidth="3"/>
-          <text x="50" y="35" textAnchor="middle" fill="#FFD700" fontSize="14" fontWeight="bold">EEEEE</text>
-          <text x="50" y="55" textAnchor="middle" fill="#FFFFFF" fontSize="10">WARRIOR</text>
-          <circle cx="50" cy="70" r="8" fill="#FFD700"/>
-          <text x="50" y="75" textAnchor="middle" fill="#C0392B" fontSize="8" fontWeight="bold">W</text>
-        </svg>
-      ),
+      image: <EEEEEWarriorIcon size={80} />,
       gradient: "from-red-500 to-orange-500"
     },
     {
@@ -67,15 +52,7 @@ export default function NFTSection() {
       rarity: "Rare",
       supply: "10000",
       description: "Community builder collection with voting power and exclusive development insights.",
-      image: (
-        <svg className="w-16 h-16" viewBox="0 0 100 100" fill="none">
-          <circle cx="50" cy="50" r="45" fill="#3498DB" stroke="#FFD700" strokeWidth="3"/>
-          <text x="50" y="35" textAnchor="middle" fill="#FFD700" fontSize="14" fontWeight="bold">EEEEE</text>
-          <text x="50" y="55" textAnchor="middle" fill="#FFFFFF" fontSize="10">BUILDER</text>
-          <circle cx="50" cy="70" r="8" fill="#FFD700"/>
-          <text x="50" y="75" textAnchor="middle" fill="#3498DB" fontSize="8" fontWeight="bold">B</text>
-        </svg>
-      ),
+      image: <EEEEEBuilderIcon size={64} />,
       gradient: "from-blue-500 to-cyan-500"
     }
   ];
@@ -88,15 +65,7 @@ export default function NFTSection() {
         rarity: "Legendary",
         supply: "1000",
         description: "The original EEEEE genesis collection with exclusive staking rewards and governance rights.",
-        image: (
-          <svg className="w-16 h-16" viewBox="0 0 100 100" fill="none">
-            <circle cx="50" cy="50" r="45" fill="#FFD700" stroke="#8B5CF6" strokeWidth="3"/>
-            <text x="50" y="35" textAnchor="middle" fill="#8B5CF6" fontSize="14" fontWeight="bold">EEEEE</text>
-            <text x="50" y="55" textAnchor="middle" fill="#FFFFFF" fontSize="10">GENESIS</text>
-            <circle cx="50" cy="70" r="8" fill="#8B5CF6"/>
-            <text x="50" y="75" textAnchor="middle" fill="#FFD700" fontSize="8" fontWeight="bold">G</text>
-          </svg>
-        ),
+        image: <EEEEEGenesisIcon size={80} />,
         gradient: "from-violet-500 to-purple-500"
       }
     ];
@@ -129,15 +98,7 @@ export default function NFTSection() {
               {/* NFT Display */}
               <div className="p-8 lg:p-12">
                 <div className={`aspect-square bg-gradient-to-br ${nftCollections?.[selectedNFT]?.gradient || 'from-violet-500 to-purple-500'} rounded-2xl flex items-center justify-center mb-6 relative overflow-hidden`}>
-                  <div className="text-white scale-[2]">{nftCollections?.[selectedNFT]?.image || (
-                    <svg className="w-16 h-16" viewBox="0 0 100 100" fill="none">
-                      <circle cx="50" cy="50" r="45" fill="#8B5CF6" stroke="#FFD700" strokeWidth="4"/>
-                      <text x="50" y="35" textAnchor="middle" fill="#FFD700" fontSize="14" fontWeight="bold">EEEEE</text>
-                      <text x="50" y="55" textAnchor="middle" fill="#FFFFFF" fontSize="10">COIN</text>
-                      <circle cx="50" cy="70" r="8" fill="#FFD700"/>
-                      <text x="50" y="75" textAnchor="middle" fill="#8B5CF6" fontSize="8" fontWeight="bold">E</text>
-                    </svg>
-                  )}</div>
+                  <div className="text-white flex items-center justify-center">{nftCollections?.[selectedNFT]?.image || <EEEEEGenesisIcon size={140} />}</div>
                   <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
                   <div className="absolute top-4 right-4 px-3 py-1 bg-black/50 rounded-full text-sm font-bold text-white">
                     #{String(selectedNFT + 1).padStart(4, '0')}
@@ -210,12 +171,22 @@ export default function NFTSection() {
                       </button>
                     </EEEEEPopup>
                     <div className="grid grid-cols-2 gap-3">
-                      <button className="py-3 bg-gradient-to-r from-emerald-600 to-cyan-600 rounded-lg font-semibold hover:scale-105 transition-transform">
+                      <a
+                        href="https://cnft.io/marketplace?search=EEEEE"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="py-3 bg-gradient-to-r from-emerald-600 to-cyan-600 rounded-lg font-semibold hover:scale-105 transition-transform text-center block"
+                      >
                         View on CNFT
-                      </button>
-                      <button className="py-3 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg font-semibold hover:scale-105 transition-transform">
+                      </a>
+                      <a
+                        href="https://jpg.store/search?search=EEEEE"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="py-3 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg font-semibold hover:scale-105 transition-transform text-center block"
+                      >
                         Marketplace
-                      </button>
+                      </a>
                     </div>
                   </div>
                 </div>
