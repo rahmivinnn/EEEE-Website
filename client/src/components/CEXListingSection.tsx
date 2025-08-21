@@ -10,8 +10,15 @@ export default function CEXListingSection() {
     {
       name: "Binance",
       logo: (
-        <svg className="w-8 h-8" viewBox="0 0 24 24" fill="#F3BA2F">
-          <path d="M12 2.25L9.75 4.5L12 6.75L14.25 4.5L12 2.25ZM6.75 6L4.5 8.25L6.75 10.5L9 8.25L6.75 6ZM17.25 6L15 8.25L17.25 10.5L19.5 8.25L17.25 6ZM12 9.75L9.75 12L12 14.25L14.25 12L12 9.75ZM2.25 12L0 14.25L2.25 16.5L4.5 14.25L2.25 12ZM21.75 12L19.5 14.25L21.75 16.5L24 14.25L21.75 12ZM6.75 17.25L4.5 19.5L6.75 21.75L9 19.5L6.75 17.25ZM17.25 17.25L15 19.5L17.25 21.75L19.5 19.5L17.25 17.25ZM12 17.25L9.75 19.5L12 21.75L14.25 19.5L12 17.25Z"/>
+        <svg className="w-8 h-8" viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="8" fill="#F0B90B"/>
+          <g transform="translate(8, 8)">
+            <path d="M12 4L16 8L12 12L8 8L12 4Z" fill="white"/>
+            <path d="M4 12L8 16L4 20L0 16L4 12Z" fill="white"/>
+            <path d="M20 12L24 16L20 20L16 16L20 12Z" fill="white"/>
+            <path d="M12 20L16 24L12 28L8 24L12 20Z" fill="white"/>
+            <rect x="8" y="12" width="8" height="8" fill="white"/>
+          </g>
         </svg>
       ),
       status: "Coming Soon",
@@ -23,8 +30,13 @@ export default function CEXListingSection() {
     {
       name: "KuCoin",
       logo: (
-        <svg className="w-8 h-8" viewBox="0 0 24 24" fill="#00D4AA">
-          <path d="M12 0L0 6.857v10.286L12 24l12-6.857V6.857L12 0zm0 2.571l9.429 5.143L12 12.857 2.571 7.714 12 2.571zM2.571 9.429L12 14.571v7.714l-9.429-5.143V9.429zm18.858 0v7.714L12 22.286v-7.714l9.429-5.143z"/>
+        <svg className="w-8 h-8" viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="8" fill="#00D4AA"/>
+          <g transform="translate(8, 8)">
+            <path d="M12 0L24 12L12 24L0 12L12 0Z" fill="white"/>
+            <path d="M12 4L20 12L12 20L4 12L12 4Z" fill="#00D4AA"/>
+            <circle cx="12" cy="12" r="3" fill="white"/>
+          </g>
         </svg>
       ),
       status: "Coming Soon",
@@ -36,8 +48,14 @@ export default function CEXListingSection() {
     {
       name: "Gate.io",
       logo: (
-        <svg className="w-8 h-8" viewBox="0 0 24 24" fill="#00D4AA">
-          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm5.707-13.707L12 14l-5.707-5.707 1.414-1.414L12 11.172l4.293-4.293 1.414 1.414z"/>
+        <svg className="w-8 h-8" viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="8" fill="#4A90E2"/>
+          <g transform="translate(8, 8)">
+            <rect x="0" y="4" width="24" height="4" fill="white"/>
+            <rect x="0" y="12" width="20" height="4" fill="white"/>
+            <rect x="0" y="20" width="16" height="4" fill="white"/>
+            <circle cx="20" cy="6" r="2" fill="white"/>
+          </g>
         </svg>
       ),
       status: "Coming Soon",
@@ -49,8 +67,13 @@ export default function CEXListingSection() {
     {
       name: "Bybit",
       logo: (
-        <svg className="w-8 h-8" viewBox="0 0 24 24" fill="#F7931A">
-          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm6 8h-3v3h3v2h-3v3h-2v-3H9v3H7v-3H4v-2h3V8H4V6h3V3h2v3h4V3h2v3h3v2z"/>
+        <svg className="w-8 h-8" viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="8" fill="#000000"/>
+          <g transform="translate(8, 8)">
+            <circle cx="12" cy="12" r="11" fill="#F7931A"/>
+            <path d="M8 8L16 8L20 12L16 16L8 16L4 12L8 8Z" fill="#000000"/>
+            <circle cx="12" cy="12" r="4" fill="#F7931A"/>
+          </g>
         </svg>
       ),
       status: "Coming Soon",
@@ -62,8 +85,15 @@ export default function CEXListingSection() {
     {
       name: "OKX",
       logo: (
-        <svg className="w-8 h-8" viewBox="0 0 24 24" fill="#000000">
-          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-3-15h6v2H9V7zm0 4h6v2H9v-2zm0 4h6v2H9v-2z"/>
+        <svg className="w-8 h-8" viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="8" fill="#000000"/>
+          <g transform="translate(4, 4)">
+            <rect x="0" y="0" width="10" height="10" fill="white"/>
+            <rect x="22" y="0" width="10" height="10" fill="white"/>
+            <rect x="11" y="11" width="10" height="10" fill="white"/>
+            <rect x="0" y="22" width="10" height="10" fill="white"/>
+            <rect x="22" y="22" width="10" height="10" fill="white"/>
+          </g>
         </svg>
       ),
       status: "Coming Soon",
@@ -75,8 +105,13 @@ export default function CEXListingSection() {
     {
       name: "Coinbase",
       logo: (
-        <svg className="w-8 h-8" viewBox="0 0 24 24" fill="#0052FF">
-          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 21.6c-5.302 0-9.6-4.298-9.6-9.6S6.698 2.4 12 2.4s9.6 4.298 9.6 9.6-4.298 9.6-9.6 9.6zm-3.6-9.6c0-1.988 1.612-3.6 3.6-3.6s3.6 1.612 3.6 3.6-1.612 3.6-3.6 3.6-3.6-1.612-3.6-3.6z"/>
+        <svg className="w-8 h-8" viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="8" fill="#0052FF"/>
+          <g transform="translate(8, 8)">
+            <circle cx="12" cy="12" r="12" fill="white"/>
+            <circle cx="12" cy="12" r="9" fill="#0052FF"/>
+            <rect x="9" y="10" width="6" height="4" rx="2" fill="white"/>
+          </g>
         </svg>
       ),
       status: "Coming Soon",

@@ -34,8 +34,12 @@ export default function NFTSection() {
       supply: "1000",
       description: "The original EEEEE genesis collection with exclusive staking rewards and governance rights.",
       image: (
-        <svg className="w-16 h-16" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="#FFD700"/>
+        <svg className="w-16 h-16" viewBox="0 0 100 100" fill="none">
+          <circle cx="50" cy="50" r="45" fill="#FFD700" stroke="#8B5CF6" strokeWidth="3"/>
+          <text x="50" y="35" textAnchor="middle" fill="#8B5CF6" fontSize="14" fontWeight="bold">EEEEE</text>
+          <text x="50" y="55" textAnchor="middle" fill="#FFFFFF" fontSize="10">GENESIS</text>
+          <circle cx="50" cy="70" r="8" fill="#8B5CF6"/>
+          <text x="50" y="75" textAnchor="middle" fill="#FFD700" fontSize="8" fontWeight="bold">G</text>
         </svg>
       ),
       gradient: "from-violet-500 to-purple-500"
@@ -47,8 +51,12 @@ export default function NFTSection() {
       supply: "5000",
       description: "Elite warrior NFTs providing access to premium DeFi features and metaverse experiences.",
       image: (
-        <svg className="w-16 h-16" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M6.92 5H5L6.5 2.5H8.5L10 5H8.08L9 8H15L15.92 5H14L15.5 2.5H17.5L19 5H17.08L18 8V9C18 10.1 17.1 11 16 11H15L16 21H8L9 11H8C6.9 11 6 10.1 6 9V8L6.92 5Z" fill="#C0392B"/>
+        <svg className="w-16 h-16" viewBox="0 0 100 100" fill="none">
+          <circle cx="50" cy="50" r="45" fill="#C0392B" stroke="#FFD700" strokeWidth="3"/>
+          <text x="50" y="35" textAnchor="middle" fill="#FFD700" fontSize="14" fontWeight="bold">EEEEE</text>
+          <text x="50" y="55" textAnchor="middle" fill="#FFFFFF" fontSize="10">WARRIOR</text>
+          <circle cx="50" cy="70" r="8" fill="#FFD700"/>
+          <text x="50" y="75" textAnchor="middle" fill="#C0392B" fontSize="8" fontWeight="bold">W</text>
         </svg>
       ),
       gradient: "from-red-500 to-orange-500"
@@ -60,8 +68,12 @@ export default function NFTSection() {
       supply: "10000",
       description: "Community builder collection with voting power and exclusive development insights.",
       image: (
-        <svg className="w-16 h-16" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M13.78 15.3L19.78 21.3L21.89 19.14L15.89 13.14L13.78 15.3M17.5 10.1C17.11 10.1 16.69 10.05 16.36 9.91L4.97 21.25L2.86 19.14L10.27 11.74C8.5 10.3 8.5 7.7 10.27 6.26C12.04 4.82 14.96 4.82 16.73 6.26C18.5 7.7 18.5 10.3 16.73 11.74C16.4 11.88 16.03 10.1 17.5 10.1Z" fill="#3498DB"/>
+        <svg className="w-16 h-16" viewBox="0 0 100 100" fill="none">
+          <circle cx="50" cy="50" r="45" fill="#3498DB" stroke="#FFD700" strokeWidth="3"/>
+          <text x="50" y="35" textAnchor="middle" fill="#FFD700" fontSize="14" fontWeight="bold">EEEEE</text>
+          <text x="50" y="55" textAnchor="middle" fill="#FFFFFF" fontSize="10">BUILDER</text>
+          <circle cx="50" cy="70" r="8" fill="#FFD700"/>
+          <text x="50" y="75" textAnchor="middle" fill="#3498DB" fontSize="8" fontWeight="bold">B</text>
         </svg>
       ),
       gradient: "from-blue-500 to-cyan-500"
@@ -77,8 +89,12 @@ export default function NFTSection() {
         supply: "1000",
         description: "The original EEEEE genesis collection with exclusive staking rewards and governance rights.",
         image: (
-          <svg className="w-16 h-16" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="#FFD700"/>
+          <svg className="w-16 h-16" viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="50" r="45" fill="#FFD700" stroke="#8B5CF6" strokeWidth="3"/>
+            <text x="50" y="35" textAnchor="middle" fill="#8B5CF6" fontSize="14" fontWeight="bold">EEEEE</text>
+            <text x="50" y="55" textAnchor="middle" fill="#FFFFFF" fontSize="10">GENESIS</text>
+            <circle cx="50" cy="70" r="8" fill="#8B5CF6"/>
+            <text x="50" y="75" textAnchor="middle" fill="#FFD700" fontSize="8" fontWeight="bold">G</text>
           </svg>
         ),
         gradient: "from-violet-500 to-purple-500"
