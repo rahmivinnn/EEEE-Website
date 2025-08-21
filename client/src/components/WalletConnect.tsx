@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { ExternalLink, Copy, CheckCircle, AlertCircle } from 'lucide-react';
 import { useCardanoWallet } from '@/hooks/useCardanoWallet';
 import { useToast } from '@/hooks/use-toast';
-import { EternlLogo } from '@/components/CardanoLogos';
+import { BlueCardanoWalletIcon } from '@/components/CardanoLogos';
 
 export default function WalletConnect() {
   const [showWallets, setShowWallets] = useState(false);
@@ -96,7 +96,7 @@ export default function WalletConnect() {
     <div className="bg-gradient-to-br from-zinc-900/90 to-black/90 backdrop-blur-xl border border-zinc-800 rounded-2xl p-6">
       <div className="text-center mb-6">
         <div className="w-12 h-12 mx-auto mb-3 flex items-center justify-center">
-          <EternlLogo className="w-12 h-12" />
+          <BlueCardanoWalletIcon className="w-12 h-12" />
         </div>
         <h3 className="text-xl font-semibold text-white mb-2">Connect Cardano Wallet</h3>
         <p className="text-zinc-400 text-sm">

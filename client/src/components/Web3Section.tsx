@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useQuery } from "@tanstack/react-query";
 import { useCardanoWallet } from "@/hooks/useCardanoWallet";
-import { EternlLogo } from "@/components/CardanoLogos";
+import { BlueCardanoWalletIcon } from "@/components/CardanoLogos";
 import WalletConnect from "@/components/WalletConnect";
 import EEEEEPopup from "@/components/EEEEEPopup";
 import StakingInterface from "@/components/StakingInterface";
@@ -114,8 +114,8 @@ export default function Web3Section() {
           {/* Wallet Connection */}
           <div className="bg-gradient-to-br from-zinc-900/90 to-black/90 backdrop-blur-xl border border-zinc-800 rounded-3xl p-8">
             <div className="flex items-center gap-4 mb-6">
-              <div className="p-3 bg-gradient-to-br from-purple-500 to-yellow-600 rounded-xl">
-                <EternlLogo className="w-6 h-6 text-white" />
+              <div className="p-3 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl">
+                <BlueCardanoWalletIcon className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-white tracking-wide">CARDANO WALLET</h3>
             </div>
