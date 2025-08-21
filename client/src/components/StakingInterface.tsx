@@ -104,13 +104,15 @@ export default function StakingInterface() {
       if (!response.ok) throw new Error('Failed to create staking position');
       return response.json();
     },
-    onSuccess: () => {
+    onSuccess: (data) => {
+      console.log('✅ Staking successful:', data);
       queryClient.invalidateQueries({ queryKey: [`/api/staking-positions/${address}`] });
       setStakingAmount('');
       setIsStaking(false);
     },
     onError: (error) => {
-      console.error('Staking failed:', error);
+      console.error('❌ Staking failed:', error);
+      alert(`Staking failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
       setIsStaking(false);
     }
   });
@@ -147,8 +149,18 @@ export default function StakingInterface() {
   });
 
   const handleStake = async () => {
-    if (!stakingAmount || !connected) return;
-    
+    if (!stakingAmount || !connected) {
+      console.log('❌ Cannot stake: missing amount or wallet not connected');
+      return;
+    }
+
+    const numAmount = parseFloat(stakingAmount);
+    if (isNaN(numAmount) || numAmount <= 0) {
+      console.log('❌ Invalid staking amount:', stakingAmount);
+      return;
+    }
+
+    console.log(`🚀 Starting stake: ${stakingAmount} EEEEE, Lock: ${selectedLockPeriod}, Connected: ${connected}`);
     setIsStaking(true);
     stakeMutation.mutate({ amount: stakingAmount, lockPeriod: selectedLockPeriod });
   };
