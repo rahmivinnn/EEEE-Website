@@ -1,0 +1,103 @@
+📄 Website Specification Document
+
+Project: Official Website for $EEEEE
+
+
+---
+
+1. Homepage
+
+🟣 Hero Section
+
+Headline:
+Welcome to $EEEEE
+
+Subheadline:
+The Loudest Meme on Cardano. Period.
+
+Description:
+$EEEEE is more than just a coin — it's a meme-powered movement shaking up the Cardano ecosystem with vibes, volume, and virality. Fueled by community, culture, and chaos (in the best way), we’re here to make noise that can’t be ignored.
+
+
+---
+
+2. About Section
+
+🚀 About $EEEEE
+Born from the chaos of crypto and powered by an army of degens, $EEEEE is a meme token that doesn't just ride waves — we create them. Whether it’s insane volume, bullish news, or collabs that shake timelines, $EEEEE stays loud.
+
+
+---
+
+3. Why $EEEEE Section
+
+🔥 Why $EEEEE?
+
+Hype-Backed: From major meme contests to viral raids, the energy around $EEEEE is unmatched.
+
+Community-Led: Everything we do is built by the people. We’re fueled by fun, strategy, and solid vibes.
+
+Web3 Native: Listed on TapTools, with multiple major collabs brewing. We’re building something loud — and lasting.
+
+
+
+---
+
+4. Mascot Design
+
+Our coin mascot is the loudest in the room, literally. Always yelling, always moving, always memeing — it represents the wild, unstoppable spirit of $EEEEE.
+
+
+---
+
+5. Tokenomics
+
+📊 Tokenomics
+
+Total Supply: 1,000,000,000
+
+Dev Allocation: 78.95M (Fully vested. Transparent vesting schedule available.)
+
+LP Burned & Renounced: True to meme culture.
+
+
+
+---
+
+6. Roadmap
+
+🌐 Roadmap
+Announced on Discord
+
+
+---
+
+7. Upcoming Collaborations
+
+🤝 Upcoming Collaborations
+A major collab is around the corner — potentially involving meme heavyweights. Let’s just say if $SNEK’s looking for energy, $EEEEE brings the whole damn jungle.
+
+
+---
+
+8. Official Links
+
+🔗 Official Links
+
+X: https://x.com/eeeeecoin_ada
+
+Discord: https://discord.gg/mMfa5nkAaT
+
+Dexhunter: https://app.dexhunter.io/swap?tokenIdSell=&tokenIdBuy=3d7fcadb114dacbdffa1aeb2f3dc2fecec610a3b572d60f96f1341494545454545436f696e414441
+
+Taptools: https://www.taptools.io/charts/token/63f947b8d9535bc4e4ce6919e3dc056547e8d30ada12f29aa5f826b8.8d3429b1cd8f035141c7c020be711747c6b4623b5ca5d5a87c97d78b84a1a94a?charts=
+
+Snekfun: https://www.snek.fun/token/3d7fcadb114dacbdffa1aeb2f3dc2fecec610a3b572d60f96f1341494545454545436f696e414441?1752081989900
+
+Policy ID: 3d7fcadb114dacbdffa1aeb2f3dc2fecec610a3b572d60f96f134149
+
+
+
+---
+
+👉 Bagian Official Links ini sebaiknya ditaruh di Footer agar mudah diakses, serta bisa dibuat tombol "Buy $EEEEE" yang langsung redirect ke Dexhunter.
