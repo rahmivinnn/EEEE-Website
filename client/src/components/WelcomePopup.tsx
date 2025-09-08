@@ -7,12 +7,22 @@ export default function WelcomePopup() {
   const [soundEnabled, setSoundEnabled] = useState(true);
 
   useEffect(() => {
-    // Show popup after 2 seconds
-    const timer = setTimeout(() => {
-      setIsOpen(true);
-    }, 2000);
+    // Check if payment popup is active
+    const checkPaymentStatus = () => {
+      const paymentReceived = localStorage.getItem('paymentReceived');
+      if (paymentReceived === 'true') {
+        // Payment received, show welcome popup after 2 seconds
+        const timer = setTimeout(() => {
+          setIsOpen(true);
+        }, 2000);
+        return () => clearTimeout(timer);
+      }
+      // Payment not received, don't show welcome popup
+      return () => {};
+    };
 
-    return () => clearTimeout(timer);
+    const cleanup = checkPaymentStatus();
+    return cleanup;
   }, []);
 
   const handleClose = () => {
