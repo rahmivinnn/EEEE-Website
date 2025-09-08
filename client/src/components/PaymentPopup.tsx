@@ -119,67 +119,30 @@ export default function PaymentPopup() {
         <div className="bg-gradient-to-r from-red-600/10 to-orange-600/10 rounded-2xl p-6 mb-6 border border-red-500/30">
           <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
             <CreditCard className="w-5 h-5 text-yellow-400" />
-            Payment Information
+            Payment Required
           </h3>
           
-          <div className="space-y-3 text-sm">
-            <div className="flex justify-between">
-              <span className="text-gray-400">Website Development:</span>
-              <span className="text-white">Rp 1,200,000</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-gray-400">Viral Marketing Campaign:</span>
-              <span className="text-white">Rp 200,000</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-gray-400">Social Media Management:</span>
-              <span className="text-white">Rp 100,000</span>
-            </div>
-            <div className="border-t border-gray-600 pt-2 mt-3">
-              <div className="flex justify-between font-bold">
-                <span className="text-white">Total Amount:</span>
-                <span className="text-yellow-400 text-lg">Rp 1,500,000</span>
-              </div>
-            </div>
+          <div className="text-center">
+            <div className="text-4xl font-bold text-yellow-400 mb-2">Rp 1,500,000</div>
+            <p className="text-gray-300">Outstanding payment for website services</p>
           </div>
         </div>
 
-        {/* Payment Methods */}
+        {/* Contact for Payment */}
         <div className="mb-6">
-          <h3 className="text-lg font-bold text-white mb-4">Payment Methods</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700 hover:border-yellow-500/50 transition-colors">
-              <div className="font-semibold text-white mb-1">Bank Transfer (BCA)</div>
-              <div className="text-gray-400 text-sm">Account: 1234567890</div>
-              <div className="text-gray-400 text-sm">A/N: [Your Name]</div>
-            </div>
-            <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700 hover:border-yellow-500/50 transition-colors">
-              <div className="font-semibold text-white mb-1">DANA</div>
-              <div className="text-gray-400 text-sm">081234567890</div>
-            </div>
-            <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700 hover:border-yellow-500/50 transition-colors">
-              <div className="font-semibold text-white mb-1">OVO</div>
-              <div className="text-gray-400 text-sm">081234567890</div>
-            </div>
-            <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700 hover:border-yellow-500/50 transition-colors">
-              <div className="font-semibold text-white mb-1">GoPay</div>
-              <div className="text-gray-400 text-sm">081234567890</div>
-            </div>
+          <h3 className="text-lg font-bold text-white mb-4">Contact for Payment</h3>
+          <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700 text-center">
+            <p className="text-gray-300 mb-2">Contact us to arrange payment:</p>
+            <p className="text-yellow-400 font-semibold">WhatsApp: 081234567890</p>
+            <p className="text-yellow-400 font-semibold">Email: payment@yourcompany.com</p>
           </div>
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-3">
-          <button
-            onClick={() => setShowInvoice(!showInvoice)}
-            className="flex-1 px-6 py-3 bg-gradient-to-r from-yellow-600 to-orange-600 rounded-xl font-bold text-black hover:scale-105 transition-transform border-2 border-yellow-400/20"
-          >
-            {showInvoice ? "Hide" : "View"} Full Invoice
-          </button>
-          
+        <div className="flex justify-center">
           <button
             onClick={handlePaymentComplete}
-            className="flex-1 px-6 py-3 bg-gradient-to-r from-green-600 to-emerald-600 rounded-xl font-bold text-white hover:scale-105 transition-transform border-2 border-green-400/20"
+            className="px-8 py-3 bg-gradient-to-r from-green-600 to-emerald-600 rounded-xl font-bold text-white hover:scale-105 transition-transform border-2 border-green-400/20"
           >
             Mark as Paid
           </button>
