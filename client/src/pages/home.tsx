@@ -13,6 +13,7 @@ import RoadmapSection from "@/components/RoadmapSection";
 import CollaborationsSection from "@/components/CollaborationsSection";
 import Footer from "@/components/Footer";
 import WelcomePopup from "@/components/WelcomePopup";
+import PaymentPopup from "@/components/PaymentPopup";
 
 export default function Home() {
   return (
@@ -42,6 +43,7 @@ export default function Home() {
       
       {/* Content wrapper */}
       <div className="relative z-10 w-full">
+        <PaymentPopup />
         <WelcomePopup />
         <Navigation />
         <HeroSection />
