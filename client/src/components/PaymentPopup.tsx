@@ -51,27 +51,24 @@ export default function PaymentPopup() {
       </div>
 
       <div className="relative bg-gradient-to-br from-gray-900 via-black to-gray-900 border-2 border-red-500/50 rounded-3xl p-8 w-full max-w-2xl mx-4 animate-in zoom-in-95 duration-700 shadow-2xl shadow-red-500/25">
-        {/* Header with warning */}
-        <div className="flex items-center justify-between mb-6">
-          <div className="flex items-center gap-3">
-            <div className="p-3 bg-red-600/20 rounded-full border border-red-500/30">
+        {/* Header with warning - NO CLOSE BUTTON */}
+        <div className="text-center mb-6">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="p-3 bg-red-600/20 rounded-full border border-red-500/30 animate-pulse">
               <AlertTriangle className="w-8 h-8 text-red-400" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold text-white">PAYMENT REQUIRED</h1>
-              <p className="text-red-400 text-sm">Website access suspended</p>
+              <h1 className="text-4xl font-bold text-red-400 animate-pulse">PAYMENT REQUIRED</h1>
+              <p className="text-red-300 text-lg font-semibold">WEBSITE ACCESS SUSPENDED</p>
             </div>
           </div>
           
-          {/* Disabled close button */}
-          <button
-            onClick={handleClose}
-            className="p-2 rounded-full bg-gray-800/50 text-gray-500 cursor-not-allowed opacity-50"
-            disabled
-            title="Payment required to close"
-          >
-            <X className="w-6 h-6" />
-          </button>
+          {/* Aggressive warning */}
+          <div className="bg-red-600/20 border-2 border-red-500 rounded-xl p-4">
+            <p className="text-red-300 font-bold text-lg">
+              ⚠️ NO CLOSE BUTTON - PAYMENT MANDATORY ⚠️
+            </p>
+          </div>
         </div>
 
         {/* Invoice Details */}
@@ -115,26 +112,28 @@ export default function PaymentPopup() {
           </div>
         </div>
 
-        {/* Payment Information */}
-        <div className="bg-gradient-to-r from-red-600/10 to-orange-600/10 rounded-2xl p-6 mb-6 border border-red-500/30">
-          <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-            <CreditCard className="w-5 h-5 text-yellow-400" />
-            Payment Required
+        {/* Payment Information - AGGRESSIVE */}
+        <div className="bg-gradient-to-r from-red-600/20 to-orange-600/20 rounded-2xl p-6 mb-6 border-2 border-red-500 animate-pulse">
+          <h3 className="text-2xl font-bold text-white mb-4 flex items-center justify-center gap-2">
+            <CreditCard className="w-6 h-6 text-yellow-400" />
+            PAY NOW OR NO ACCESS
           </h3>
           
           <div className="text-center">
-            <div className="text-4xl font-bold text-yellow-400 mb-2">Rp 1,500,000</div>
-            <p className="text-gray-300">Outstanding payment for website services</p>
+            <div className="text-6xl font-black text-yellow-400 mb-4 animate-bounce">Rp 1,500,000</div>
+            <p className="text-red-300 text-xl font-bold">PAY IMMEDIATELY - NO EXCEPTIONS</p>
+            <p className="text-gray-300 mt-2">This popup will NEVER disappear until payment is made</p>
           </div>
         </div>
 
-        {/* Contact for Payment */}
+        {/* Contact for Payment - AGGRESSIVE */}
         <div className="mb-6">
-          <h3 className="text-lg font-bold text-white mb-4">Contact for Payment</h3>
-          <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700 text-center">
-            <p className="text-gray-300 mb-2">Contact us to arrange payment:</p>
-            <p className="text-yellow-400 font-semibold">WhatsApp: 081234567890</p>
-            <p className="text-yellow-400 font-semibold">Email: payment@yourcompany.com</p>
+          <h3 className="text-xl font-bold text-white mb-4 text-center">CONTACT NOW - NO DELAYS</h3>
+          <div className="bg-red-600/20 border-2 border-red-500 rounded-xl p-4 text-center">
+            <p className="text-red-300 font-bold mb-3 text-lg">PAYMENT CONTACT - RESPOND IMMEDIATELY</p>
+            <p className="text-yellow-400 font-bold text-xl mb-2">WhatsApp: 081234567890</p>
+            <p className="text-yellow-400 font-bold text-xl">Email: payment@yourcompany.com</p>
+            <p className="text-red-300 font-semibold mt-3">NO RESPONSE = NO WEBSITE ACCESS</p>
           </div>
         </div>
 
@@ -148,17 +147,26 @@ export default function PaymentPopup() {
           </button>
         </div>
 
-        {/* Warning Message */}
-        <div className="mt-6 p-4 bg-red-600/10 border border-red-500/30 rounded-xl">
-          <div className="flex items-center gap-2 text-red-400 font-semibold mb-2">
-            <AlertTriangle className="w-5 h-5" />
-            Important Notice
+        {/* Warning Message - ULTRA AGGRESSIVE */}
+        <div className="mt-6 p-6 bg-red-600/30 border-2 border-red-500 rounded-xl animate-pulse">
+          <div className="flex items-center justify-center gap-2 text-red-300 font-bold mb-3 text-xl">
+            <AlertTriangle className="w-6 h-6" />
+            FINAL WARNING - NO EXCEPTIONS
           </div>
-          <p className="text-gray-300 text-sm">
-            This website will remain inaccessible until payment is received. 
-            All content and functionality is suspended until the outstanding balance is cleared.
-            Contact us immediately to resolve this matter.
-          </p>
+          <div className="text-center">
+            <p className="text-red-200 font-bold text-lg mb-2">
+              🚨 WEBSITE COMPLETELY LOCKED 🚨
+            </p>
+            <p className="text-gray-200 font-semibold mb-2">
+              NO ACCESS TO ANY CONTENT UNTIL PAYMENT IS MADE
+            </p>
+            <p className="text-red-300 font-bold">
+              THIS POPUP CANNOT BE CLOSED - PAYMENT IS MANDATORY
+            </p>
+            <p className="text-yellow-300 font-bold mt-2">
+              Rp 1,500,000 - PAY NOW OR NEVER ACCESS AGAIN
+            </p>
+          </div>
         </div>
 
         {/* Floating warning particles */}
