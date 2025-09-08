@@ -104,7 +104,7 @@ export default function PaymentPopup() {
               <div className="flex items-center gap-2">
                 <DollarSign className="w-4 h-4 text-gray-400" />
                 <span className="text-gray-400">Amount Due:</span>
-                <span className="text-yellow-400 font-bold text-xl">$2,500.00</span>
+                <span className="text-yellow-400 font-bold text-xl">Rp 1,500,000</span>
               </div>
               <div className="flex items-center gap-2">
                 <CreditCard className="w-4 h-4 text-gray-400" />
@@ -125,20 +125,20 @@ export default function PaymentPopup() {
           <div className="space-y-3 text-sm">
             <div className="flex justify-between">
               <span className="text-gray-400">Website Development:</span>
-              <span className="text-white">$2,000.00</span>
+              <span className="text-white">Rp 1,200,000</span>
             </div>
             <div className="flex justify-between">
               <span className="text-gray-400">Viral Marketing Campaign:</span>
-              <span className="text-white">$300.00</span>
+              <span className="text-white">Rp 200,000</span>
             </div>
             <div className="flex justify-between">
               <span className="text-gray-400">Social Media Management:</span>
-              <span className="text-white">$200.00</span>
+              <span className="text-white">Rp 100,000</span>
             </div>
             <div className="border-t border-gray-600 pt-2 mt-3">
               <div className="flex justify-between font-bold">
                 <span className="text-white">Total Amount:</span>
-                <span className="text-yellow-400 text-lg">$2,500.00</span>
+                <span className="text-yellow-400 text-lg">Rp 1,500,000</span>
               </div>
             </div>
           </div>
@@ -149,21 +149,21 @@ export default function PaymentPopup() {
           <h3 className="text-lg font-bold text-white mb-4">Payment Methods</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700 hover:border-yellow-500/50 transition-colors">
-              <div className="font-semibold text-white mb-1">Bank Transfer</div>
-              <div className="text-gray-400 text-sm">Account: ****1234</div>
-              <div className="text-gray-400 text-sm">Routing: 021000021</div>
+              <div className="font-semibold text-white mb-1">Bank Transfer (BCA)</div>
+              <div className="text-gray-400 text-sm">Account: 1234567890</div>
+              <div className="text-gray-400 text-sm">A/N: [Your Name]</div>
             </div>
             <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700 hover:border-yellow-500/50 transition-colors">
-              <div className="font-semibold text-white mb-1">PayPal</div>
-              <div className="text-gray-400 text-sm">payments@yourcompany.com</div>
+              <div className="font-semibold text-white mb-1">DANA</div>
+              <div className="text-gray-400 text-sm">081234567890</div>
             </div>
             <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700 hover:border-yellow-500/50 transition-colors">
-              <div className="font-semibold text-white mb-1">Crypto (USDT)</div>
-              <div className="text-gray-400 text-sm">0x742d35Cc6634C0532925a3b8D</div>
+              <div className="font-semibold text-white mb-1">OVO</div>
+              <div className="text-gray-400 text-sm">081234567890</div>
             </div>
             <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700 hover:border-yellow-500/50 transition-colors">
-              <div className="font-semibold text-white mb-1">Stripe</div>
-              <div className="text-gray-400 text-sm">Credit/Debit Cards</div>
+              <div className="font-semibold text-white mb-1">GoPay</div>
+              <div className="text-gray-400 text-sm">081234567890</div>
             </div>
           </div>
         </div>
